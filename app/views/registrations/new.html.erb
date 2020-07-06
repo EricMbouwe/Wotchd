@@ -1,17 +1,17 @@
-<div class="">
+<div class="container">
   <p class="">
-  <%= flash.notice %>
+    <%= flash.notice %>
   </p>
 
-  <%= form_with( url: sessions_path ) do |f| %>
+  <%= form_with( url: registrations_path ) do |f| %>
 
     <div class="">
-    <%= label_tag :name, "User Name to Log In" %><br />
-    <%= f.text_field :name, autofocus: true  %>
-    <%= label_tag :email, "Email" %><br />
-    <%= f.text_field :email %>
-    <%= label_tag :password, "Password" %><br />
-    <%= f.text_field :password %>
+      <%= label_tag :name, "User Name to Log In", class: "" %>
+      <%= f.text_field :name, autofocus: true  %><br />
+      <%= label_tag :email, "Email" %>
+      <%= f.text_field :email %><br />
+      <%= label_tag :password, "Password" %>
+      <%= f.text_field :password %>
     </div>
 
     <div class="actions">

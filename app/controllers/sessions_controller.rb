@@ -1,7 +1,5 @@
 class SessionsController < ApplicationController
 
-  include CurrentUserConcern
-
   def new
     render :new
   end
@@ -11,15 +9,15 @@ class SessionsController < ApplicationController
     
     if @user
       session[:user_id] = @user.id
-      redirect_to events_path
+      redirect_to new_registration_path, notice: "You have successfully logged in."
     else
-      flash[:alert] = "'" + params[:name] + "' : is a Wrong User Name !!"
-      redirect_to session_new_path
+      redirect_to new_session_path, notice: "Something went wrong, try again."
     end
   end
 
   def destroy
     reset_session
-    redirect_to session_new_path
+    flash[:notice] = "You have successfully logged out."
+    redirect_to new_session_path
   end
 end
