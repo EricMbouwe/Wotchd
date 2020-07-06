@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.4.1'
 gem 'hirb'
+
+#gems for authentication
+gem 'bcrypt', '~> 3.1', '>= 3.1.13'
+gem 'rack-cors', :require => 'rack/cors'
