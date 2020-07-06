@@ -1,0 +1,21 @@
+<div class="">
+  <p class="">
+  <%= flash.notice %>
+  </p>
+
+  <%= form_with( url: sessions_path ) do |f| %>
+
+    <div class="">
+    <%= label_tag :name, "User Name to Log In" %><br />
+    <%= f.text_field :name, autofocus: true  %>
+    <%= label_tag :email, "Email" %><br />
+    <%= f.text_field :email %>
+    <%= label_tag :password, "Password" %><br />
+    <%= f.text_field :password %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign Up"  %>
+    </div>
+  <% end %>
+</div>
