@@ -14,6 +14,10 @@ class SessionsController < ApplicationController
       redirect_to new_session_path, notice: "Something went wrong, try again."
     end
   end
+   
+  def logged_in
+    @current_user ? true : false
+  end
 
   def destroy
     reset_session
