@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  # skip_before_action :require_login, only: [:new, :create]
 
   def new
     render :new
@@ -13,10 +14,6 @@ class SessionsController < ApplicationController
     else
       redirect_to new_session_path, notice: "Something went wrong, try again."
     end
-  end
-   
-  def logged_in
-    @current_user ? true : false
   end
 
   def destroy

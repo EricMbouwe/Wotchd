@@ -1,14 +1,15 @@
 class RegistrationsController < ApplicationController
   before_action :set_user, only: %i[:edit, :update, :destroy, :show]
-  # before_action :require_login, except: %i[:new, create]
+  # skip_before_action :require_login, only: [:new, :create]
 
   def new
-    @label_name = 'Sign Up'
+    @user = User.new
+    @label_name = 'Create User'
     render :new
   end
 
   def create
-    @user = User.create!(
+    @user = User.create(
       name: params[:name],
       email: params[:email],
       password: params[:password],
@@ -18,7 +19,8 @@ class RegistrationsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: 'User was successfully created.'
     else
-      redirect_to root_path, notice: 'Operation failed.' 
+      flash[:alert] = "Could not save user"
+      redirect_to new_registration_path
     end
   end
 
@@ -48,16 +50,6 @@ class RegistrationsController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password)
-  end
-
-  def require_login
-    # session[:user_id] = nil
-    if session[:user_id]
-      true
-    else
-      redirect_to new_session_path
-      false
-    end
   end
 
 end

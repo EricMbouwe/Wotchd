@@ -1,1 +1,26 @@
-<%= render 'form', label_name: @label_name %>
+<div class="container">
+
+  <h1>Edit user</h1>
+
+  <%= form_with( url: edit_registration_path ) do |f| %>
+
+    <ul>
+      <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+
+    <div class="">
+      <%= label_tag :name, "User Name to Log In", class: "" %>
+      <%= f.text_field :name, autofocus: true  %><br />
+      <%= label_tag :email, "Email" %>
+      <%= f.text_field :email %><br />
+      <%= label_tag :password, "Password" %>
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit @label_name %>
+    </div>
+  <% end %>
+</div>
