@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_211404) do
+ActiveRecord::Schema.define(version: 2020_07_07_205159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.text "name", null: false
+    t.integer "amount", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "group_id"
+    t.index ["group_id"], name: "index_programs_on_group_id"
+    t.index ["name"], name: "index_programs_on_name"
+    t.index ["user_id"], name: "index_programs_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -23,4 +42,6 @@ ActiveRecord::Schema.define(version: 2020_07_06_211404) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "programs", "groups"
+  add_foreign_key "programs", "users"
 end

@@ -1,9 +1,10 @@
 class User < ApplicationRecord
   has_secure_password
-  validates_presence_of :name, length: { minimum: 6 }
+  validates :name, presence: true, length: { in: 3..10 }
   validates_presence_of :email
   validates_presence_of :password
   validates_uniqueness_of :email
 
+  has_many :programs, inverse_of: 'author', dependent: :destroy
   
 end
