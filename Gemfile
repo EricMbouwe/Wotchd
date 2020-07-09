@@ -59,3 +59,10 @@ gem 'hirb'
 #gems for authentication
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 gem 'rack-cors', :require => 'rack/cors'
+
+#added gems
+gem 'better_errors', '~> 2.7', '>= 2.7.1'
+gem 'gravatar_image_tag', '~> 1.2'
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
+gem 'guard', '~> 2.14'
+gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false

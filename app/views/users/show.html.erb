@@ -1,0 +1,29 @@
+<div class="profile">
+  <div class="profile-header text-center">
+    <figure class="d-flex justify-content-center">
+      <!-- <%= image_tag 'stephen-arnold.jpg', alt: "Mon image", width: 500, height: 500, class: "rounded" %> -->
+      <%= gravatar_image_tag(@user.email, size: 150, alt: @user.name) %>
+    </figure>
+    <h1 class="username"><%= @user.name.capitalize %></h1>
+  </div>
+
+  <div class=" profile-content w-75 mx-auto">
+    <h1>
+      <i class="fa fa-television" aria-hidden="true"></i>
+      <%= link_to 'All my programs', programs_path %>
+    </h1>
+    <h1>
+      <i class="fa fa-television" aria-hidden="true"></i>
+      <%= link_to 'All my shuffled programs', programs_path %>
+    </h1>
+    <h1>
+      <i class="fa fa-television" aria-hidden="true"></i>
+      <%= link_to 'All groups', groups_path %>
+    </h1>
+    <h1>
+      <i class="fa fa-television" aria-hidden="true"></i>
+      <%= link_to 'Log out', session_path %>
+    </h1>
+
+  </div>
+</div>

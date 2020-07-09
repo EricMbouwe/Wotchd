@@ -4,7 +4,7 @@ class RegistrationsController < ApplicationController
 
   def new
     @user = User.new
-    @label_name = 'Create User'
+    @button_name = 'Create User'
     render :new
   end
 
@@ -21,18 +21,6 @@ class RegistrationsController < ApplicationController
     else
       flash[:alert] = "Could not save user"
       redirect_to new_registration_path
-    end
-  end
-
-  def edit
-    @label_name = 'Update user'
-  end
-
-  def update
-    if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.' 
-    else
-      render :edit
     end
   end
 

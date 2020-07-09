@@ -2,7 +2,7 @@
 
   <h1>Edit user</h1>
 
-  <%= form_with( url: edit_registration_path ) do |f| %>
+  <%= form_with( url: registrations_path, method: 'PATCH' ) do |f| %>
 
     <ul>
       <% @user.errors.full_messages.each do |error| %>
@@ -20,7 +20,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit @label_name %>
+      <%= f.submit 'Update user' %>
     </div>
   <% end %>
 </div>

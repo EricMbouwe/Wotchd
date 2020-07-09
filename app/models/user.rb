@@ -6,5 +6,4 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
 
   has_many :programs, inverse_of: 'author', dependent: :destroy
-  
 end

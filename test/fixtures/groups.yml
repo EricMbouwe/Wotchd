@@ -3,9 +3,7 @@
 one:
   name: MyString
   icon: MyString
-  user: one
 
 two:
   name: MyString
   icon: MyString
-  user: two
