@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :registrations, except: [:index]
-  resources :programs
-  resources :groups
-  resources :users, only: [:show, :edit, :update]
-  root to: 'static#home'
+  resources :programs, only: [:new, :index, :create, :destroy]
+  resources :groups, only: [:new, :index, :create, :show]
+  resources :users, only: [:show]
 end

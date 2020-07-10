@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Add a new program</h1>
+  <%= form_with( url: programs_path ) do |f| %>
+
+    <ul>
+      <% @program.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+
+    <div class="form-group">
+      <%= label_tag :name, "Program name", class:"" %>
+      <%= f.text_field :name, autofocus: true, class: "form-control"  %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :hours, "hours watched" %>
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :category, "Category" %>
+      <%= f.text_field :password, class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Add a program', class: "btn btn-primary"  %>
+    </div>
+  <% end %>
+
+</div>

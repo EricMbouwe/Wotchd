@@ -4,7 +4,7 @@ class RegistrationsController < ApplicationController
 
   def new
     @user = User.new
-    @button_name = 'Create User'
+    @button = 'Create User'
     render :new
   end
 
@@ -22,6 +22,11 @@ class RegistrationsController < ApplicationController
       flash[:alert] = "Could not save user"
       redirect_to new_registration_path
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+    @button = 'Update user'
   end
 
   def destroy

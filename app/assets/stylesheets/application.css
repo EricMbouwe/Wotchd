@@ -59,7 +59,7 @@ a {
 }
 
 .text-color {
-  color: #434b54
+  color: #434b54;
 }
 
 .programs-list_head {
@@ -69,6 +69,7 @@ a {
 
 .programs-list_content {
   color: #434b54;
+  height: 100%;
 }
 
 .programs-list_card {

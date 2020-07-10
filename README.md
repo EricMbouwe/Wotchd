@@ -23,3 +23,6 @@ Things you may want to cover:
 
 * ...
 # Wotchd
+
+<!-- <%= image_tag 'stephen-arnold.jpg', alt: "Mon image", width: 500, height: 500, class: "rounded" %> -->
+

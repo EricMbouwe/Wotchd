@@ -1,7 +1,6 @@
 <div class="profile d-flex flex-column">
   <div class="profile-header text-center mb-5">
     <figure class="d-flex justify-content-center">
-      <!-- <%= image_tag 'stephen-arnold.jpg', alt: "Mon image", width: 500, height: 500, class: "rounded" %> -->
       <%= gravatar_image_tag(@user.email, size: 150, alt: @user.name, class: 'mt-4') %>
     </figure>
     <h1 class="username"><%= @user.name.capitalize %></h1>

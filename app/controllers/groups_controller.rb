@@ -20,23 +20,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  def edit
-    @group = Group.find(params[:id])
-  end
-
-  def show
-    @group = Group.find(params[:id])
-  end
-
-  def update
-    @group = Group.find(params[:id])
-    if @group.update
-      redirect_to group_path, notice: 'group succefully updated'
-    else
-      redirect_to edit_group_path, alert: 'failed to update group'
-    end
-  end
-
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
@@ -46,4 +29,21 @@ class GroupsController < ApplicationController
   def group_params
     params.require(:group).permit(:name, :icon)
   end
+  
+  # def edit
+  #   @group = Group.find(params[:id])
+  # end
+
+  # def show
+  #   @group = Group.find(params[:id])
+  # end
+
+  # def update
+  #   @group = Group.find(params[:id])
+  #   if @group.update
+  #     redirect_to group_path, notice: 'group succefully updated'
+  #   else
+  #     redirect_to edit_group_path, alert: 'failed to update group'
+  #   end
+  # end
 end

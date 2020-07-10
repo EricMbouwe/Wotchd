@@ -4,7 +4,7 @@ class ProgramsController < ApplicationController
   end
 
   def index
-    # @user = User.find(params[:id])
+    # @user = @current_user
     @programs = Program.all.ordered_by_most_recent
     @programs_nogroup = Program.all.no_group.ordered_by_most_recent
     # @programs_amount = Program.total_hours
@@ -30,23 +30,25 @@ class ProgramsController < ApplicationController
     end
   end
 
-  def edit
-    @program = Program.find(param[:id])
-  end
-
-  def show
-    @program = Program.find(param[:id])
-  end
-
-  def update
-    @program = Program.find(param[:id])
-  end
-
   def destroy
     @program = Program.find(param[:id])
+    @program.destroy
+    redirect_to programs_path
   end
 
   def program_params
     params.require(:program).permit(:name, :amount, :group)
   end
+
+  # def edit
+  #   @program = Program.find(param[:id])
+  # end
+
+  # def show
+  #   @program = Program.find(param[:id])
+  # end
+
+  # def update
+  #   @program = Program.find(param[:id])
+  # end
 end
