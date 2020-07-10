@@ -4,11 +4,13 @@ class ProgramsController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     @programs = Program.all.ordered_by_most_recent
     @programs_nogroup = Program.all.no_group.ordered_by_most_recent
-    @user_programs = @user.programs.ordered_by_most_recent
-    @user_programs_nogroup = @user.programs.no_group.ordered_by_most_recent
+    # @programs_amount = Program.total_hours
+    # @programs_amount = Program.sum(:amount)
+    # @user_programs = @current_user.programs.ordered_by_most_recent
+    # @user_programs_nogroup = @current_user.programs.no_group.ordered_by_most_recent
   end
 
   def create
