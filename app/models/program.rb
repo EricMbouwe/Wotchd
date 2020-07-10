@@ -6,4 +6,7 @@ class Program < ApplicationRecord
 
   validates :name, presence: true, length: { in: 3..15 }
   validates :amount, presence: true, numericality: { only_integer: true }
+
+  scope :ordered_by_most_recent, -> { order(created_at: :desc) }
+  scope :no_group, -> { where group_id: nil }
 end
