@@ -1,13 +1,13 @@
-<div class="profile">
-  <div class="profile-header text-center">
+<div class="profile d-flex flex-column">
+  <div class="profile-header text-center mb-5">
     <figure class="d-flex justify-content-center">
       <!-- <%= image_tag 'stephen-arnold.jpg', alt: "Mon image", width: 500, height: 500, class: "rounded" %> -->
-      <%= gravatar_image_tag(@user.email, size: 150, alt: @user.name) %>
+      <%= gravatar_image_tag(@user.email, size: 150, alt: @user.name, class: 'mt-4') %>
     </figure>
     <h1 class="username"><%= @user.name.capitalize %></h1>
   </div>
 
-  <div class=" profile-content w-75 mx-auto">
+  <div class=" profile-content align-self-center ">
     <h1>
       <i class="fa fa-television" aria-hidden="true"></i>
       <%= link_to 'All my programs', programs_path %>

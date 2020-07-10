@@ -1,19 +1,58 @@
 <div class= "programs-list">
-  <div class= "program-list_head">
-    <div class="menu d-flex justify-content-between">
-      <span><i class="fa fa-bars" aria-hidden="true"></i></span>
-      <h1>Programs</h1>
-      <span><i class="fa fa-search" aria-hidden="true"></i></span>
+  <div class= "programs-list_head">
+    <div class="menu d-flex justify-content-between align-items-center p-2">
+      <span><i class="fa fa-bars fa-2x font-weight-lighter" aria-hidden="true"></i></span>
+      <p class="title m-0">Programs</p>
+      <span><i class="fa fa-search fa-2x" aria-hidden="true"></i></span>
     </div>
-    <div class="amount_watched d-flex justify-content-between bg-white">
-      <p>Total hours watched</p>
-      <p>amount</p>
+    <div class="amount_watched d-flex justify-content-between align-items-center py-3 px-2 bg-white text-color">
+      <p class="m-0">Total hours watched</p>
+      <p class="m-0">amount</p>
     </div>
   </div>
 
-  <div class= "program-list_content">
-    <div class= "program-list_card">
-      <p>program name</p>
+  <div class= "programs-list_content">
+    <div class= "programs-list_card d-flex justify-content-between">
+      <div class="program_details d-flex border border-dark p-1">
+        <p class="m-0">icon</p>
+        <div class="program_details__details border border-dark ml-1">
+          <p class='m-0'>program name</p>
+          <small>program date</small>
+        </div>
+      </div>
+      <p class="border border-dark p-1 m-0">program amount</p>
+    </div>
+    
+    <%# <div class= "programs-list_card">
+      <p class="m-0">program name</p>
+      <p>program icon</p>
+      <p>program date</p>
+      <p>program amount</p>
+    </div>
+
+    <div class= "programs-list_card">
+      <p class="m-0">program name</p>
+      <p>program icon</p>
+      <p>program date</p>
+      <p>program amount</p>
+    </div>
+
+    <div class= "programs-list_card">
+      <p class="m-0">program name</p>
+      <p>program icon</p>
+      <p>program date</p>
+      <p>program amount</p>
+    </div>
+
+    <div class= "programs-list_card">
+      <p class="m-0">program name</p>
+      <p>program icon</p>
+      <p>program date</p>
+      <p>program amount</p>
+    </div> %>
+
+    <div class="add-btn">
+      <button type="button" class="btn border border-white btn-lg btn-block text-white btn-outline-success">Add a program</button>
     </div>
   </div>
 
