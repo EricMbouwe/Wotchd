@@ -6,19 +6,19 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(name: params[:name].downcase)
+    @user = User.find_by(name: params[:name])
     
     if @user
       session[:user_id] = @user.id
-      redirect_to @user, notice: "You have successfully logged in."
+      redirect_to @user, notice: 'You have successfully logged in.'
     else
-      redirect_to new_session_path, notice: "Something went wrong, try again."
+      redirect_to new_session_path, notice: 'Something went wrong, try again.'
     end
   end
 
   def destroy
     reset_session
-    flash[:notice] = "You have successfully logged out."
+    flash[:notice] = 'You have successfully logged out.'
     redirect_to new_session_path
   end
 end

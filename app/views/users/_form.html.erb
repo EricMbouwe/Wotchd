@@ -1,12 +1,16 @@
 <div class="">
 
-  <%= form_with( url: registrations_path ) do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @user.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-    <ul>
-      <% @user.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
-      <% end %>
-    </ul>
+  <%= form_for @user do |f| %>
 
     <div class="form-group">
       <%= label_tag :name, "User Name to Log In", class: "" %>
@@ -23,7 +27,7 @@
     </div>
 
     <div class="actions">
-      <%= f.submit @button, class: "btn btn-primary"  %>
+      <%= f.submit class: "btn btn-primary btn-block"  %>
     </div>
   <% end %>
 

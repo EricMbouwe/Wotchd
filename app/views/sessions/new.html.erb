@@ -1,14 +1,14 @@
-<div class="">
+<div class="container">
 
   <%= form_with( url: sessions_path ) do |f| %>
 
-    <div class="">
+    <div class="form-group">
       <%= label_tag :name, "User Name to Log In" %><br />
-      <%= f.text_field :name, autofocus: true  %>
+      <%= f.text_field :name, autofocus: true, class: "form-control" %>
     </div>
 
     <div class="actions">
-      <%= f.submit "Login"  %>
+      <%= f.submit "Login", class: "btn btn-primary btn-block" %>
     </div>
   <% end %>
 </div>

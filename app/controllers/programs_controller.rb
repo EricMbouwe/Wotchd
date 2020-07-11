@@ -14,19 +14,20 @@ class ProgramsController < ApplicationController
   end
 
   def create
-    @user = User.find(session[:id])
-    # @program = @user.programs.build(program_params)
+    # @user = User.find(session[:id])
+    @program = current_user.programs.build(program_params)
 
-    @program = @current_user.program.create(
-      name: params[:name],
-      amount: params[:amount],
-      group: params[:group]
-    )
+    # @program = current_user.programs.create(
+    #   name: params[:name],
+    #   amount: params[:amount],
+    #   group: params[:group]
+    # )
 
     if @program.save
       redirect_to programs_path, notice: 'program successfully created!'
     else
-      redirect_to new_program_path, alert: @program.errors.full_messages.join('. ').to_s
+      # redirect_to new_program_path, alert: @program.errors.full_messages.join('. ').to_s
+      render :new
     end
   end
 
