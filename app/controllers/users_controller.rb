@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  # skip_before_action :require_login, only: [:new, :create]
-  # before_action :set_user, only: %i[:edit, :update, :destroy, :show]
+  skip_before_action :require_login, only: %i[:new, :create]
 
   def show
     @user = User.find(params[:id])
@@ -18,7 +17,6 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to @user, notice: 'User was successfully created.'
     else
-      # redirect_to new_registration_path, alert: 'Could not save user'
       render :new
     end
   end

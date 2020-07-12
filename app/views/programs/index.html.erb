@@ -3,9 +3,9 @@
   <div class= "programs-list_head sticky-top">
     <div class="menu d-flex justify-content-between align-items-center p-2">
       <%= link_to user_path(session[:user_id]) do %>
-        <span><i class="fa fa-bars fa-2x" aria-hidden="true"></i></span>
+        <span><i class="fa fa-bars" aria-hidden="true"></i></span>
       <% end %>
-      <h4 class="title m-0">Programs</h4>
+      <h4 class="title m-0"><%= @title %></h4>
       <span><i class="fa fa-search" aria-hidden="true"></i></span>
     </div>
     <div class="amount_watched d-flex justify-content-between align-items-center py-3 px-2 bg-light text-color">

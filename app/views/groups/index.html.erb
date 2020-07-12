@@ -14,8 +14,8 @@
 
     <% @groups.each do |group|%>
       <%= link_to group do %>
-        <div class= "groups-list_card d-flex justify-content-center bg-fff">
-          <p class="m-0"><%= group.icon %></p>
+        <div class= "groups-list_card d-flex justify-content-center bg-light">
+          <p class="m-0 border border-dark"><%= group.icon %></p>
           <div class="group_details border border-dark ml-2">
             <p class='m-0'><%= group.name %></p>
             <small><%= group.created_at %></small>

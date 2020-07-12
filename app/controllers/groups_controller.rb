@@ -13,7 +13,6 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to groups_path, notice: 'group created'
     else
-      # redirect_to new_group_path, alert: @group.errors.full_messages.join('. ').to_s
       render :new
     end
   end

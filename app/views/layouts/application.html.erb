@@ -14,9 +14,9 @@
 
   <body class="">
 
-    <!-- <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: name, class:"m-0" %>
-    <% end %> -->
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name, class:"m-0 bg-success" %>
+    <% end %>
    
 
     <%= yield %>
