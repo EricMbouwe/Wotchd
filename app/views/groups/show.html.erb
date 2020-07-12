@@ -1,0 +1,38 @@
+<div class= "group programs-list bg-eee">
+
+  <div class= "programs-list_head">
+    <div class="menu d-flex justify-content-between align-items-center p-2">
+      <%= link_to user_path(session[:user_id]) do %>
+        <span><i class="fa fa-bars fa-2x font-weight-lighter" aria-hidden="true"></i></span>
+      <% end %>
+      <p class="title m-0">Programs</p>
+      <span><i class="fa fa-search fa-2x" aria-hidden="true"></i></span>
+    </div>
+    <div class="amount_watched d-flex justify-content-between align-items-center py-3 px-2 bg-light text-color">
+      <p class="m-0">Total hours watched</p>
+      <p class="m-0"><%= @total_amount  %></p>
+    </div>
+  </div>
+
+  <div class= "programs-list_content">
+
+    <% @group.programs.each do |program|%>
+      <div class= "programs-list_card d-flex justify-content-between">
+        <div class="program_details d-flex border border-dark p-1">
+          <p class="m-0"><%= @group.icon %></p>
+          <div class="program_details__details border border-dark ml-1">
+            <p class='m-0'><%= program.name %></p>
+            <small><%= program.created_at %></small>
+            <small><%= program.author %></small>
+          </div>
+        </div>
+        <p class="border border-dark p-1 m-0"><%= program.amount %></p>
+      </div>
+    <% end %>
+
+    <div class="add-btn navbar fixed-bottom">
+      <%= link_to 'Add new program', new_program_path, class:"btn border border-white btn-lg btn-block text-white btn-outline-success" %>
+    </div>
+  </div>
+
+<div>

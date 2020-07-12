@@ -6,4 +6,5 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
 
   has_many :programs, inverse_of: 'author', dependent: :destroy
+  has_many :full_programs, -> { includes :group }, class_name: 'Program'
 end

@@ -50,7 +50,7 @@ a {
 
 /*Programs list*/
 .programs-list {
- background-color: #eee;
+ /* background-color: #eee; */
  height: auto;
 }
 
@@ -58,24 +58,34 @@ a {
   font-size: x-large;
 }
 
+.bg-eee {
+  background-color: #eee;
+}
+
+.bg-fff {
+  background-color: #fff;
+}
+
 .text-color {
   color: #434b54;
 }
 
-.programs-list_head {
+.programs-list_head, 
+.groups-list_head,
+.new-item-nav {
  background-color: #3778c2;
- color: #fff;
+ color: #eee;
 }
 
 .programs-list_content {
   color: #434b54;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .programs-list_card {
   background-color: #fff;
   padding: 1rem;
-  border-radius: 4px;
+  border-radius: 2px;
   width: 94%;
   margin: 12px auto;
 }
@@ -84,3 +94,31 @@ a {
   background-color: #5fb523;
   padding: 12px;
 }
+
+.add-btn a {
+  border-radius: 2px;
+}
+
+/* Group style*/
+
+.group-list {
+  /* background-color: #3778c2; */
+  min-height: 100vh;
+}
+
+.groups-list_card {
+  padding: 1rem;
+  border-radius: 2px;
+  width: 94%;
+  margin: 12px auto;
+}
+
+/* Home style*/
+
+.home {
+  background-color: #eee;
+  height: 100vh;
+}
+
+/*login and Sign up style*/
+

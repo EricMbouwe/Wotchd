@@ -1,6 +1,6 @@
-<div class= "programs-list">
+<div class= "programs-list bg-eee">
 
-  <div class= "programs-list_head">
+  <div class= "programs-list_head sticky-top">
     <div class="menu d-flex justify-content-between align-items-center p-2">
       <%= link_to user_path(session[:user_id]) do %>
         <span><i class="fa fa-bars fa-2x font-weight-lighter" aria-hidden="true"></i></span>
@@ -19,7 +19,11 @@
     <% @programs.each do |program|%>
       <div class= "programs-list_card d-flex justify-content-between">
         <div class="program_details d-flex border border-dark p-1">
+        <% if program.group %>
           <p class="m-0"><%= program.group.icon %></p>
+        <% else %>
+          <p>sample image</p>
+        <% end %>  
           <div class="program_details__details border border-dark ml-1">
             <p class='m-0'><%= program.name %></p>
             <small><%= program.created_at %></small>
@@ -29,7 +33,7 @@
       </div>
     <% end %>
 
-    <div class="add-btn fixed-bottom">
+    <div class="add-btn navbar fixed-bottom">
       <%= link_to 'Add new program', new_program_path, class:"btn border border-white btn-lg btn-block text-white btn-outline-success" %>
     </div>
   </div>

@@ -4,27 +4,20 @@ class ProgramsController < ApplicationController
   end
 
   def index
-    # @user = @current_user
-    @programs = Program.all.ordered_by_most_recent
-    @programs_nogroup = Program.all.no_group.ordered_by_most_recent
     # @programs_amount = Program.total_hours
     # @programs_amount = Program.sum(:amount)
-    # @user_programs = @current_user.programs.ordered_by_most_recent
-    # @user_programs_nogroup = @current_user.programs.no_group.ordered_by_most_recent
+    
+    caller = params[:caller]
+    @programs = current_user.programs.grouped.ordered_by_most_recent if caller == 'grouped'
+    @programs = current_user.full_programs.ordered_by_most_recent if caller == 'full'
+    @programs = current_user.programs.no_group.ordered_by_most_recent if caller == 'ungrouped'
   end
 
   def create
-    # @user = User.find(session[:id])
-    @program = current_user.programs.build(program_params)
-
-    # @program = current_user.programs.create(
-    #   name: params[:name],
-    #   amount: params[:amount],
-    #   group: params[:group]
-    # )
+    @program = current_user.programs.create(program_params)
 
     if @program.save
-      redirect_to programs_path, notice: 'program successfully created!'
+      redirect_to programs_path(caller: 'full'), notice: 'program successfully created!'
     else
       # redirect_to new_program_path, alert: @program.errors.full_messages.join('. ').to_s
       render :new
@@ -41,15 +34,4 @@ class ProgramsController < ApplicationController
     params.require(:program).permit(:name, :amount, :group)
   end
 
-  # def edit
-  #   @program = Program.find(param[:id])
-  # end
-
-  # def show
-  #   @program = Program.find(param[:id])
-  # end
-
-  # def update
-  #   @program = Program.find(param[:id])
-  # end
 end

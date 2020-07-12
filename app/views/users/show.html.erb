@@ -9,11 +9,11 @@
   <div class=" profile-content align-self-center ">
     <h1>
       <i class="fa fa-television" aria-hidden="true"></i>
-      <%= link_to 'All my programs', programs_path %>
+      <%= link_to 'All my programs', programs_path(caller: 'full') %>
     </h1>
     <h1>
       <i class="fa fa-television" aria-hidden="true"></i>
-      <%= link_to 'All my shuffled programs', programs_path(@grouped) %>
+      <%= link_to 'All my shuffled programs', programs_path(caller: 'ungrouped') %>
     </h1>
     <h1>
       <i class="fa fa-television" aria-hidden="true"></i>
@@ -21,7 +21,7 @@
     </h1>
     <h1>
       <i class="fa fa-television" aria-hidden="true"></i>
-      <%= link_to 'Log out', session_path %>
+      <%= link_to 'Log out', root_path %>
     </h1>
 
   </div>
