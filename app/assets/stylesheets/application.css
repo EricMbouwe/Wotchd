@@ -19,6 +19,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 /*User profile*/
 .profile {
   color: #eee;
@@ -42,6 +46,11 @@ a {
   border-bottom: 0.5px solid #fff;
 }
 
+.fa {
+  font-size: 20px;
+  font-weight: normal;
+}
+
 .profile-content i {
   border: 1px solid #fff;
   border-radius: 100%;
@@ -50,8 +59,7 @@ a {
 
 /*Programs list*/
 .programs-list {
- /* background-color: #eee; */
- height: auto;
+  height: auto;
 }
 
 .title {
@@ -64,6 +72,14 @@ a {
 
 .bg-fff {
   background-color: #fff;
+}
+
+.bg-blue {
+  background-color: #3778c2;
+}
+
+.rad {
+  border-radius: 2px;
 }
 
 .text-color {
@@ -102,7 +118,6 @@ a {
 /* Group style*/
 
 .group-list {
-  /* background-color: #3778c2; */
   min-height: 100vh;
 }
 
@@ -120,5 +135,33 @@ a {
   height: 100vh;
 }
 
+.log:hover {
+  background-color: #235a99;
+}
+
+.sign:hover {
+color: #235a99;
+}
+
 /*login and Sign up style*/
 
+.form-new {
+  background-color: #fff;
+  margin-top: 1rem;
+  padding: 1rem;
+  color: #e8e8ec;
+  border-top: 1px solid #e8e8ec;
+  border-bottom: 1px solid #e8e8ec;
+}
+
+.form-new input {
+  outline: none;
+  border: none;
+  padding: 5px 0;
+  border-bottom: 1px solid #e8e8ec;
+}
+
+.group-options {
+  border: 1px solid #e8e8ec;
+  padding: 5px;
+}

@@ -11,15 +11,13 @@
 <%= form_for @group do |f| %>
 
   <div class="form-group">
-    <%= label_tag :name, "Name" %>
-    <%= f.text_field :name, autofocus: true, class: "form-control"  %>
+    <%= f.text_field :name, placeholder: 'Name', autofocus: true, class: "w-100"  %>
   </div>
   <div class="form-group">
-    <%= label_tag :icon, "Icon" %>
-    <%= f.text_field :icon, class: "form-control" %>
+    <%= f.text_field :icon, placeholder: 'Icon', class: "w-100" %>
   </div>
 
   <div class="actions">
-    <%= f.submit class: "btn btn-primary btn-block"  %>
+    <%= f.submit class: "log d-block border rad p-2 text-center text-white bg-blue w-100"  %>
   </div>
 <% end %>

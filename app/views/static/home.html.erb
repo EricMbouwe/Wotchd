@@ -1,7 +1,9 @@
-<div class="home d-flex flex-column justify-content-center vh-100">
-  <h1 class="mb-5 text-center">Wotchd</h1>
-  <div class="container mt-5">
-    <%= link_to 'Log In', new_session_path, class:"btn btn-primary btn-lg btn-block text-white" %>
-    <%= link_to 'Sign Up', new_user_path, class:"btn btn-secondary btn-lg btn-block text-white" %>
+<div class="home">
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <%= image_tag 'wotchd-logo.png', alt: 'logo', width: 450, height: 200, class: "img-fluid" %>
+  </div>
+  <div class="buttons fixed-bottom mb-2 container">
+    <%= link_to 'Log In', new_session_path, class: "log d-block border rad p-2 m-1 text-center text-white bg-blue" %>
+    <%= link_to 'Sign Up', new_user_path, class: "sign d-block p-2 m-1 text-center text-color" %>
   </div>
 </div>

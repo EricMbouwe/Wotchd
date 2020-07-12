@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    render :new
+    @button = 'Sign Up'
   end
 
   def create
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @button = 'Update user'
+    @button = 'Update'
   end
 
   def update

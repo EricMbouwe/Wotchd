@@ -1,11 +1,11 @@
-<div class= "group-list bg-eee">
+<div class= "group-list bg-blue">
 
   <div class= "groups-list_head sticky-top">
     <div class="menu d-flex justify-content-between align-items-center p-2">
       <%= link_to user_path(session[:user_id]) do %>
         <span><i class="fa fa-bars fa-2x font-weight-lighter" aria-hidden="true"></i></span>
       <% end %>
-      <p class="title m-0">Groups</p>
+      <h4 class="title m-0">Groups</h4>
       <span><i class="fa fa-search fa-2x" aria-hidden="true"></i></span>
     </div>
   </div>
@@ -14,7 +14,7 @@
 
     <% @groups.each do |group|%>
       <%= link_to group do %>
-        <div class= "groups-list_card d-flex justify-content-center border border-dark">
+        <div class= "groups-list_card d-flex justify-content-center bg-fff">
           <p class="m-0"><%= group.icon %></p>
           <div class="group_details border border-dark ml-2">
             <p class='m-0'><%= group.name %></p>
@@ -24,95 +24,7 @@
       <% end %>
     <% end %>
 
-    <%= link_to group_path(id:1) do %>
-    <div class= "groups-list_card d-flex justify-content-center border-dark bg-fff">
-      <p class="m-0">icon</p>
-      <div class="group_details ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-    <% end %>
-
-    <div class= "groups-list_card d-flex bg-fff">
-      <p class="m-0">icon</p>
-      <div class="group_details ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-    <div class= "groups-list_card d-flex border border-dark bg-light">
-      <p class="m-0">icon</p>
-      <div class="group_details border border-dark ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-    <div class= "groups-list_card d-flex border border-dark bg-light">
-      <p class="m-0">icon</p>
-      <div class="group_details border border-dark ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-    <div class= "groups-list_card d-flex border border-dark bg-light">
-      <p class="m-0">icon</p>
-      <div class="group_details border border-dark ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-    <div class= "groups-list_card d-flex border border-dark bg-light">
-      <p class="m-0">icon</p>
-      <div class="group_details border border-dark ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-    <div class= "groups-list_card d-flex border border-dark bg-light">
-      <p class="m-0">icon</p>
-      <div class="group_details border border-dark ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-    <div class= "groups-list_card d-flex border border-dark bg-light">
-      <p class="m-0">icon</p>
-      <div class="group_details border border-dark ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-    <div class= "groups-list_card d-flex border border-dark bg-light">
-      <p class="m-0">icon</p>
-      <div class="group_details border border-dark ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-    <div class= "groups-list_card d-flex border border-dark bg-light">
-      <p class="m-0">icon</p>
-      <div class="group_details border border-dark ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-    <div class= "groups-list_card d-flex border border-dark bg-light">
-      <p class="m-0">icon</p>
-      <div class="group_details border border-dark ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-    <div class= "groups-list_card d-flex border border-dark bg-light">
-      <p class="m-0">icon</p>
-      <div class="group_details border border-dark ml-2">
-        <p class='m-0'>mangas</p>
-        <small>11/07/2020</small>
-      </div>
-    </div>
-
-    <div class="add-btn fixed-bottom">
+    <div class="add-btn">
       <%= link_to 'Add new group', new_group_path, class:"btn border border-white btn-lg btn-block text-white btn-outline-success" %>
     </div>
   </div>

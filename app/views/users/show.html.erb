@@ -1,5 +1,5 @@
 <div class="profile d-flex flex-column">
-  <div class="profile-header text-center mb-5">
+  <div class="profile-header text-center mb-2">
     <figure class="d-flex justify-content-center">
       <%= gravatar_image_tag(@user.email, size: 150, alt: @user.name, class: 'mt-4') %>
     </figure>
@@ -23,6 +23,6 @@
       <i class="fa fa-television" aria-hidden="true"></i>
       <%= link_to 'Log out', root_path %>
     </h1>
-
   </div>
+
 </div>

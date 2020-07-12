@@ -5,4 +5,5 @@ class Group < ApplicationRecord
 
   
   scope :order_by_name, -> { order('name DESC') }
+  scope :ordered_by_most_recent, -> { order(created_at: :desc) }
 end

@@ -1,25 +1,24 @@
-<div class="new-session bg-eee">
+<div class="new-session bg-eee vh-100">
   <div class="new-item-nav">
     <div class="menu d-flex justify-content-between align-items-center p-2">
         <%= link_to :back do %>
-          <span><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></span>
+          <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
         <% end %>
-        <p class="title m-0">Login</p>
-        <span><%= link_to 'Login', "", :onclick => "$('#form_id').submit()" %></span>
+        <h4 class="title m-0">Login</h4>
+        <span><%= link_to 'Cancel', root_path %></span>
       </div>
   </div>
 
-  <div class="container d-flex flex-column justify-content-center vh-100">
+  <div class=" form-new container d-flex flex-column justify-content-center">
 
     <%= form_with( url: sessions_path ) do |f| %>
 
       <div class="form-group">
-        <%= label_tag :name, "Name" %><br />
-        <%= f.text_field :name, autofocus: true, class: "form-control" %>
+        <%= f.text_field :name, placeholder: 'Name', autofocus: true, class: "w-100" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Login", class: "btn btn-primary btn-lg btn-block" %>
+        <%= f.submit "Login", class: "log d-block border rad p-2 text-center text-white bg-blue w-100" %>
       </div>
     <% end %>
   </div>

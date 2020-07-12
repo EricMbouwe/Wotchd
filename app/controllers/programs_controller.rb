@@ -31,7 +31,7 @@ class ProgramsController < ApplicationController
   end
 
   def program_params
-    params.require(:program).permit(:name, :amount, :group)
+    params.require(:program).permit(:name, :amount, :group_id)
   end
 
 end

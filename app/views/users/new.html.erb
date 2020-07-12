@@ -1,15 +1,15 @@
-<div class="new-user bg-eee">
+<div class="new-user bg-eee vh-100">
   <div class="new-item-nav">
     <div class="menu d-flex justify-content-between align-items-center p-2">
         <%= link_to :back do %>
-          <span><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></span>
+          <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
         <% end %>
-        <p class="title m-0">Register</p>
-        <span><%= link_to 'Sign up', "", :onclick => "$('#form_id').submit()" %></span>
+        <h4 class="title m-0">Register</h4>
+        <span><%= link_to 'Cancel', root_path %></span>
       </div>
   </div>
 
-  <div class="container  vh-100 d-flex flex-column justify-content-center">
+  <div class="container form-new d-flex flex-column justify-content-center">
     <div><%= render 'form' %></div>
   </div>
 </div>
