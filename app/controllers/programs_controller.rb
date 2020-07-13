@@ -12,8 +12,8 @@ class ProgramsController < ApplicationController
     @programs = current_user.full_programs.ordered_by_most_recent if caller == 'full'
     @programs = current_user.programs.no_group.ordered_by_most_recent if caller == 'ungrouped'
 
-    # @programs_amount = Program.total_hours if caller == 'full'
-    # @programs_amount = Program.sum(:amount)  if caller == 'ungrouped'
+    @programs_amount = current_user.programs.total_hours if caller == 'full'
+    @programs_amount = current_user.programs.no_group.total_hours  if caller == 'ungrouped'
   end
 
   def create
