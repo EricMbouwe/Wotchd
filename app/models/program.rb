@@ -13,6 +13,6 @@ class Program < ApplicationRecord
 
   # def self.total_hours
   #   self.count_by_sql(“SELECT SUM(amount) FROM programs”)
-  #   self.find_by_sql(“SELECT SUM(amount) FROM programs”) 
+  #   self.find_by_sql(“SELECT SUM(amount) FROM programs”)
   # end
 end

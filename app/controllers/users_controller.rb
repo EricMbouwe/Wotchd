@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-  # skip_before_action :require_login, only: [:new, :create]
+  before_action :require_login, except: [:new, :create]
 
   def show
     @user = User.find(params[:id])
-    @total= @user.programs ? 0 : @user.programs.find_by_sql("SELECT SUM(amount) FROM programs")
+    @total = @user.programs ? 0 : @user.programs.find_by_sql("SELECT SUM(amount) FROM programs")
   end
 
   def new
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(user_params)
+    @user = User.create(user_params)
 
     if @user.save
       session[:user_id] = @user.id
@@ -29,7 +29,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    # @user.avatar.attach(params[:avatar])
     if @user.update(user_params)
       redirect_to @user, notice: 'User sucessfully updated'
     else

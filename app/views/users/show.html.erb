@@ -2,33 +2,51 @@
   <div class="profile-header text-center mb-2">
     <figure class="d-flex justify-content-center">
       <% if @user.avatar.attached? %>
-        <%= image_tag @user.avatar, class: "mt-4 rounded-circle img-fluid", width: 90, height: 90 %>
+        <%= image_tag @user.avatar, class: "mt-5 rounded-circle img-fluid", width: 90, height: 90 %>
       <% else %>
-         <%= image_tag 'sample-profile.png', alt: "default image", width: 90, height: 90, class: "rounded-circle mt-4" %>
+         <%= image_tag 'sample-profile.png', alt: "default image", width: 90, height: 90, class: "rounded-circle mt-5" %>
       <% end %>
     </figure>
-    <h1 class="username"><%= @user.name.capitalize %></h1>
+    <h4 class="username"><%= @user.name.capitalize %></h4>
   </div>
 
-  <div class=" profile-content align-self-center ">
-    <h1>
-      <i class="fa fa-television" aria-hidden="true"></i>
-      <%= link_to 'All my programs', programs_path(caller: 'full') %>
+  <div class="profile-content align-self-center mt-4">
+    <h1 class= d-flex>
+      <i class="fa fa-television d-block" aria-hidden="true"></i>
+      <div class="align-self-center">
+        <%= link_to 'All my programs', programs_path(caller: 'full') %>
+      </div>
     </h1>
-    <h1>
-      <i class="fa fa-random" aria-hidden="true"></i>
-      <%= link_to 'All my shuffled programs', programs_path(caller: 'ungrouped') %>
+
+    <hr>
+
+    <h1 class= d-flex>
+      <i class="fa fa-random d-block" aria-hidden="true"></i>
+      <div class="align-self-center">
+        <%= link_to 'All my shuffled programs', programs_path(caller: 'ungrouped') %>
+      </div>
     </h1>
-    <h1>
-      <i class="fa fa-object-group" aria-hidden="true"></i>
-      <%= link_to 'All groups', groups_path %>
+
+    <hr>
+
+    <h1 class= d-flex>
+      <i class="fa fa-object-group d-block" aria-hidden="true"></i>
+      <div class="align-self-center">
+        <%= link_to 'All groups', groups_path %>
+      <div>
     </h1>
-    <h1>
-      <i class="fa fa-sign-out" aria-hidden="true"></i>
-      <%= link_to 'Log out', root_path %>
+
+    <hr>
+
+    <h1 class= d-flex>
+      <i class="fa fa-sign-out d-block" aria-hidden="true"></i>
+      <div class="align-self-center">
+        <%= link_to 'Log out', session_path(0), method: :delete %>
+      <div>
     </h1>
+
   </div>
 
-  <h5 class="mt-5 align-self-center text-center">You have <%= @total %> hours of streaming and watching your favorite entertainement programs.<h5>
+  <h6 class="mt-5 mx-2 align-self-center text-center">You have <%= @total %> hours of streaming and watching your favorite entertainement programs.</h6>
 
 </div>
