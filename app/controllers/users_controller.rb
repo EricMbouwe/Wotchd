@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @total = @user.programs ? 0 : @user.programs.find_by_sql("SELECT SUM(amount) FROM programs")
+    @total = @user.programs.sum(:amount)
   end
 
   def new

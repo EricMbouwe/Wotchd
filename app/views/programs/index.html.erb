@@ -19,10 +19,12 @@
     <% @programs.each do |program|%>
       <div class= "programs-list_card d-flex justify-content-between">
         <div class="program_details d-flex">
-          <% if program.group && program.group.avatar.attached? %>
-            <%= image_tag program.group.avatar, class: "", width: 70, height: 70 %>
-          <% else %>
-            <%= image_tag 'sample-profile2.png', alt: "default image", width: 70, height: 70, class: "" %>
+          <% if program.group %>
+            <% if program.group.avatar.attached?%>
+              <%= image_tag program.group.avatar, class: "", width: 70, height: 70 %>
+            <% else %>
+              <%= image_tag 'sample-group.jpg', alt: "default image", width: 70, height: 70, class: "" %>
+            <% end %>
           <% end %> 
           <div class="program_details__details ml-2">
             <p class="mt-3 mb-0"><%= program.name.capitalize %></p>
