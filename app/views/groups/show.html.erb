@@ -2,15 +2,15 @@
 
   <div class= "programs-list_head">
     <div class="menu d-flex justify-content-between align-items-center p-2">
-      <%= link_to :back do %>
+      <%= link_to groups_path do %>
         <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
       <% end %>
       <h4 class="title m-0"><%= @group.name.capitalize %> programs</h4>
       <span><i class="fa fa-search fa-2x" aria-hidden="true"></i></span>
     </div>
     <div class="amount_watched d-flex justify-content-between align-items-center py-3 px-2 bg-light text-color">
-      <p class="m-0">Total hours watched</p>
-      <p class="m-0"><%= @total_amount  %></p>
+      <p class="m-0">Total hours watched:</p>
+      <p class="m-0"><b><%= @total_amount %> hrs</b></p>
     </div>
   </div>
 
@@ -18,15 +18,19 @@
 
     <% @group.programs.each do |program|%>
       <div class= "programs-list_card d-flex justify-content-between">
-        <div class="program_details d-flex border border-dark p-1">
-          <p class="m-0 border border-dark"><%= @group.icon %></p>
-          <div class="program_details__details border border-dark ml-1">
-            <p class='m-0'><%= program.name %></p>
-            <small class="d-block mt-2">Author: <%= program.author.name %></small>
-            <small class="d-block"><%= program.created_at %></small>
+        <div class="program_details d-flex">
+          <%if @group.avatar.attached? %>
+            <%= image_tag @group.avatar, class: "", width: 70, height: 70 %>
+          <% else %>
+            <%= image_tag 'sample-profile2.png', alt: "default image", width: 70, height: 70, class: "" %>
+          <% end %>
+          <div class="program_details__details ml-1">
+            <p class="mt-2 mb-0"><%= program.name.capitalize %></p>
+            <small class="mt-2 d-block small">Author: <%= program.author.name %></small>
+            <small class="d-block small"><%= program.created_at %></small>
           </div>
         </div>
-        <p class="border border-dark p-1 m-0"><%= program.amount %></p>
+        <p class="mb-0 mt-2"><b><%= program.amount %> hrs</b></p>
       </div>
     <% end %>
 

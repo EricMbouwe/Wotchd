@@ -26,4 +26,5 @@ Things you may want to cover:
 
 <!-- <%= image_tag 'stephen-arnold.jpg', alt: "Mon image", width: 500, height: 500, class: "rounded" %> -->
 <%= link_to 'Cancel', "", :onclick => "$('#form_id').submit()" %>
+<%= gravatar_image_tag(@user.email, size: 200, alt: @user.name, class: 'mt-4') %>
 

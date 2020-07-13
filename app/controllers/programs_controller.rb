@@ -5,12 +5,13 @@ class ProgramsController < ApplicationController
 
   def index
     caller = params[:caller]
-    # @programs_amount = Program.total_hours
-    # @programs_amount = Program.sum(:amount)
     @title = caller == 'full' ? 'My programs' : 'Shuffled programs'
     @programs = current_user.programs.grouped.ordered_by_most_recent if caller == 'grouped'
     @programs = current_user.full_programs.ordered_by_most_recent if caller == 'full'
     @programs = current_user.programs.no_group.ordered_by_most_recent if caller == 'ungrouped'
+    
+    # @programs_amount = Program.total_hours if caller == 'full'
+    # @programs_amount = Program.sum(:amount)  if caller == 'ungrouped'
   end
 
   def create

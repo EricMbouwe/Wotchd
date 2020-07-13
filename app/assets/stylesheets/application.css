@@ -27,7 +27,7 @@ a:hover {
 .profile {
   color: #eee;
   background-color: #3778c2;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .profile-content a:hover {
@@ -36,7 +36,7 @@ a:hover {
 }
 
 .profile-content h1 {
-  font-size: 18px;
+  font-size: 16px;
   padding: 0.5rem 0;
 }
 
@@ -83,7 +83,11 @@ a:hover {
 }
 
 .text-color {
-  color: #434b54;
+  color: #464f5a;
+}
+
+.small {
+  font-size: 10px;
 }
 
 .programs-list_head, 
@@ -100,7 +104,7 @@ a:hover {
 
 .programs-list_card {
   background-color: #fff;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 2px;
   width: 94%;
   margin: 12px auto;
@@ -109,6 +113,10 @@ a:hover {
 .add-btn {
   background-color: #5fb523;
   padding: 12px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .add-btn a {
@@ -122,10 +130,16 @@ a:hover {
 }
 
 .groups-list_card {
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 2px;
   width: 94%;
   margin: 12px auto;
+  color: #eee;
+}
+
+.groups-list_card  a:hover {
+  color: #434b54;
+  text-decoration: none;
 }
 
 /* Home style*/
@@ -160,4 +174,6 @@ color: #235a99;
   padding: 5px 0;
   border-bottom: 1px solid #e8e8ec;
 }
+
+
 

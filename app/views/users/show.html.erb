@@ -1,7 +1,11 @@
 <div class="profile d-flex flex-column">
   <div class="profile-header text-center mb-2">
     <figure class="d-flex justify-content-center">
-      <%= gravatar_image_tag(@user.email, size: 150, alt: @user.name, class: 'mt-4') %>
+      <% if @user.avatar.attached? %>
+        <%= image_tag @user.avatar, class: "mt-4 rounded-circle img-fluid", width: 90, height: 90 %>
+      <% else %>
+         <%= image_tag 'sample-profile.png', alt: "default image", width: 90, height: 90, class: "rounded-circle mt-4" %>
+      <% end %>
     </figure>
     <h1 class="username"><%= @user.name.capitalize %></h1>
   </div>
@@ -24,5 +28,7 @@
       <%= link_to 'Log out', root_path %>
     </h1>
   </div>
+
+  <h5 class="mt-5 align-self-center text-center">You have <%= @total %> hours of streaming and watching your favorite entertainement programs.<h5>
 
 </div>
