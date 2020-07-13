@@ -20,12 +20,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @programs = @group.programs.all.ordered_by_most_recent
-    # @total_amount = @programs.sum(:amount)
-
-    # @programs.each do |program| do
-    # total
-    # program.amount += total
-    # end
+    @group_amount = @programs.total_hours
   end
 
   def edit
