@@ -1,6 +1,6 @@
-# Wotchd - an app which group your hours spent on watching entertainements programs during the day, week or the month.
+# Wotchd - a mobile application which groups your hours spent on watching entertainement programs during the day, week or the month.
 
-<img src="app/assets/images/wotchd-logo.png" alt="Wotchd" width="40" height="40">
+<img src="app/assets/images/wotchd-logo.png" alt="Wotchd" width="150" height="150">
 This is the Capstone project for the Ruby on Rails Course
 
 <hr />
@@ -197,35 +197,6 @@ You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=bloo
 
 ## Application Instructions
 
-- New users must sign up and give a username, and a fullname  
-- The user logs in to the app, only by typing the username  
-- A logged in user can create Wotchd about anything, follow othe users and check likes on other users Wotchd  
-- Has access to all other users' details including their followers and followings  
-
-- There are three main page  
-  - Wotchd (Home)  
-  - Users with 4 sub-pages  
-    - All - users sorted by their creation date  
-    - Most Friendly - all users sorted by the number of other users that follow  
-    - Most Popular - all users sorted by the number of followers  
-    - Protagonists - all users sorted by the number of Wotchd they have created  
-  - Profile with 4 sub-pages  
-    - Details - the current user can edit their details  
-    - Wotchd - listing those created by the viewed user  
-    - Following - listing the users that the viewed user follows  
-    - Followers - listing the followers of the viewed user  
-
-- All Users lists show the numbers of followees, followers and Wotchd with clickable links to the relevant page and sub-page. The image of the user links to the selected user's profile-page. Also, at the bottom-right of user's image 2 arrows, one to the left and one to the right, signal the following and followed users.    
-
-- All Wotchd lists show the opinion's author image linking to their profile and a clickable heart image allowing the current user to like-unlike each opinion.  
-
-- The Right-Side-Bar  
-  - The vertical bar at the right side  
-    - In Home-page and Users-page shows a list of all users which the current user is not following, giving control to follow them by clicking an add-button to the right of each user  
-    - In Profile-page lists the users that are following the viewed user. It provides the add-button for those that the current user is not following
-
-- As required there are pages to Sign Up, to Log In and to Edit user's details  
-
 
 <hr/>
 
@@ -344,14 +315,14 @@ This project was built using these technologies.
 ### Thanks to Gregoire Vella
 
  [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)  
- [And his ideas](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)  
+ [And his ideas](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=), for the original design  
 
 ## Acknowledgements
 
 - [Microverse](https://www.microverse.org/)
 - [The Odin Project](https://www.theodinproject.com/)
 - [Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
-- [Gregoire Vella](https://www.behance.net/gallery/14286087/Twitter-Redesign-of-UI-details)
+- [Gregoire Vella](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
