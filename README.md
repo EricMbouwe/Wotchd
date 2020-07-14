@@ -1,18 +1,4 @@
-# Wotchd
-
-<!-- <%= image_tag 'stephen-arnold.jpg', alt: "Mon image", width: 500, height: 500, class: "rounded" %> -->
-<%= link_to 'Cancel', "", :onclick => "$('#form_id').submit()" %>
-<%= gravatar_image_tag(@user.email, size: 200, alt: @user.name, class: 'mt-4') %>
-<%= label_tag :picture, 'Upload picture', class: "" %>
-
-npx stylelint "**/*.{css,scss}"
-https://stylelint.io/user-guide/usage/cli#autofixing-errors
-
-
-
-
-
-# Wotchd - a Twitter redesign project
+# Wotchd - an app which group your hours spent on watching entertainements programs during the day, week or the month.
 
 <img src="app/assets/images/wotchd-logo.png" alt="Wotchd" width="40" height="40">
 This is the Capstone project for the Ruby on Rails Course
@@ -61,17 +47,12 @@ This is the Capstone project for the Ruby on Rails Course
   </p>
 </p>
   
-Wotchd is based on a redesign of Twitter.  
-Is an application to share Wotchd about books, politics, health etc - anything that you can share Wotchd about with people who follow you.  
+Wotchd is a tracker app.  
+It is an application to group and track your hours spent on watching your favorite entertenement programs  
   
-Additionally to the requirements, I added the following features :  
-  - User can check Likes to the Wotchd  
-  - Users are presented in 4 modes   
-    - All  
-    - Most Friendly, those who follow many users  
-    - Most Popular, those who are followed by many users  
-    - Protagonists, those who have created many Wotchd  
-  - Links are everywhere, to users, to Wotchd, to followings apply  
+Additional features are :  
+  - User can delete a program  
+  - User can update a group and change its icon  
 
 <!-- TABLE OF CONTENTS -->
 
@@ -99,6 +80,11 @@ Additionally to the requirements, I added the following features :
 
 ## Application Screen Shots
 
+#### Wotchd - splash screen
+
+<img src="app/assets/images/Wotchd-home.png" alt="program interface">
+<hr />
+
 #### Sign Up
 
 <img src="app/assets/images/sign-up.png" alt="program interface">
@@ -109,29 +95,35 @@ Additionally to the requirements, I added the following features :
 <img src="app/assets/images/log-in.png" alt="program interface">
 <hr />
 
-#### Wotchd - Home
+#### Wotchd - User Home
 
 <img src="app/assets/images/Wotchd-home.png" alt="program interface">
 <hr />
 
-#### Users List
+#### Wotchd - My Programs
 
-<img src="app/assets/images/users-list.png" alt="program interface">
+<img src="app/assets/images/Wotchd-home.png" alt="program interface">
 <hr />
 
-#### Users Details
+#### Wotchd - My shuffled Programs
 
-<img src="app/assets/images/user-details.png" alt="program interface">
+<img src="app/assets/images/Wotchd-home.png" alt="program interface">
 <hr />
 
-#### Users Wotchd
+#### Wotchd - All Groups
 
-<img src="app/assets/images/user-Wotchd.png" alt="program interface">
+<img src="app/assets/images/Wotchd-home.png" alt="program interface">
 <hr />
+
+#### Wotchd - Group's Programs
+
+<img src="app/assets/images/Wotchd-home.png" alt="program interface">
+<hr />
+
 
 ## Video presentation
 
-  [View with Loom](https://www.loom.com/share/591511228ba74ea78ca4b46c2228f34e)
+  [View with Loom](https://www.loom.com/share/)
 
 <hr />
 
@@ -139,33 +131,33 @@ Additionally to the requirements, I added the following features :
 
 ## About The Project
 
-The project creates a database which holds 4 tables:
+The project creates a database which holds 3 tables:
 
     - Users : Is the table containing the users' data  
       - Fields :  
-        - string:   username  
-        - string:   fullname 
+        - string:   name  
+        - string:   email  
+        - string:   password  
         - datetime: created_at  
         - datetime: update_at  
 
-    - Wotchd : is the table containing the Wotchd' data  
+    - Programs : is the table containing the programs' data  
       - Fields:  
-        - text:     text  
+        - string:   name  
+        - integer:  amount  
         - integer:  author_id  
+        - integer:  group_id    
         - datetime: created_at  
         - datetime: update_at  
 
-    - Followings : Is the table that tracks users followings  
+    - Groups : Is the table to groups programs  
       - Fields  
-        - integer: follower_id  
-        - integer: followed_id  
+        - string: name  
+        - string: icon  
+        - datetime: created_at  
+        - datetime: update_at  
 
-    - Likes : Is the table that contains the users' likes on the Wotchd  
-      - Fields  
-        - integer: opinion_id  
-        - integer: user_id  
-
-Additionally 2 tables are created by the ActiveStorage to keep links to the users' images
+We have 2 tables created by the ActiveStorage to store users and groups avtars as well.
 
   - active_storage_attachments
   - active_storage_blobs
@@ -174,49 +166,19 @@ Additionally 2 tables are created by the ActiveStorage to keep links to the user
 
 ## N+1 Problem
 
-  The n+1 problem is encountered in this project into multiple case.  
-  In order to avoid server's overhead, in some cases it has been solved by using aggregated SQL statements and in some other scopes of models.  
-
-  #### Examples in Class User
-
-  #### Aggregation examples
+  The n+1 problem is encountered in this project in one case for the association between a user and programs and groups
 
   ```
-
-      def self.sort_by_friendly
-        User.find_by_sql("SELECT users.id, users.username, users.fullname,
-                                  count(flds.id) fd
-                          FROM users
-                          LEFT JOIN followings flds ON users.id = flds.follower_id
-                          GROUP BY users.id, users.username, users.fullname
-                          ORDER BY fd DESC")
-      end
-
-      def self.sort_by_popular
-        User.find_by_sql("SELECT users.id, users.username, users.fullname,
-                                  count(flrs.id) fr
-                          FROM users
-                          LEFT JOIN followings flrs ON users.id = flrs.followed_id
-                          GROUP BY users.id, users.username, users.fullname
-                          ORDER BY fr DESC")
-      end
-
-      def self.protagonists
-        User.find_by_sql("SELECT users.id, users.username, users.fullname,
-                                  count(Wotchd.id) Wotchd_count
-                          FROM users
-                          LEFT JOIN Wotchd ON users.id = Wotchd.author_id
-                          GROUP BY users.id, users.username, users.fullname
-                          ORDER BY Wotchd_count DESC")
-      end
-
+    has_one :full_programs, -> { includes :group }, class_name: 'Program'
   ```
+
 <hr/>
 
-  #### Scope example
+  #### Scope examples
 
 ```
-    scope :to_follow, ->(user) { where('id NOT IN (?)', user_followed(user)).filter { |f| f.id != user.id } }
+  scope :no_group, -> { where group_id: nil }
+  scope :order_by_name, -> { order('name DESC') }
 ```
 
 <hr/>
@@ -224,7 +186,7 @@ Additionally 2 tables are created by the ActiveStorage to keep links to the user
 
 ## ERD
 
-<img src="docs/Wotchd-erd.png" alt="ERD">
+<img src="docs/wotchd-erd.png" alt="ERD">
 
 <hr/>
 
@@ -274,14 +236,15 @@ You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=bloo
 - Yarn
 - RSpec
 - ActiveStorage
-- Google Cloud Services
 
 ## Dependencies
 
-- rspec-rails gem
-- capybara gem
-- selenium-webdriver gem
-- chromedriver-helper gem
+- gem 'rspec-rails'  
+- gem 'capybara'  
+- gem 'selenium-webdriver'  
+- gem 'chromedriver-helper  
+- gem 'bcrypt'  
+- gem 'rack-cors'  
 
 ## Configuration
 
@@ -300,7 +263,6 @@ You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=bloo
   rails db:migrate
 
   bundle install
-  rails generate rspec:install
   yarn install
 ```
 
@@ -317,17 +279,23 @@ You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=bloo
 <hr/>
 
 ## Testing
+In order to run test run this command first
 
-- Tests have been included using RSpec for controllers, views and models
-- Location /spec/tests/
-- 5 test files
+```
+rails generate rspec:install
+```
+Then run  
+
+```
+rspec spec/
+```
+Unit and integration tests have been done using RSpec an Capybara
+- Location /spec/tests/  
+- 4 test files  
   - features_spec.rb  
-  - following_spec.rb  
-  - like_spec.rb  
-  - opinion_spec.rb  
-  - user_spec.rb    
-
-#### Controller test files implement the views tests as well.
+  - user_spec.rb  
+  - program_spec.rb  
+  - group_spec.rb  
 
 <hr/>
 
@@ -350,7 +318,6 @@ This project was built using these technologies.
 - rspec
 - capybara
 - ActiveStorage
-- Google Cloud Services
 - Heroku
 
 <hr/>
@@ -361,12 +328,12 @@ This project was built using these technologies.
 
 :bust_in_silhouette: **Author**
 
-## Ioannis Kousis
+## Eric Mbouwe
 
 - Github: [@ericmbouwe](https://github.com/ericmbouwe)
 - Twitter: [@ericmbouwe](https://twitter.com/ericmbouwe)
-- Linkedin: [Ioannis Kousis](https://www.linkedin.com/in/jgkousis)
-- E-mail: jgkousis@gmail.com
+- Linkedin: [Eric Mbouwe](https://www.linkedin.com/in/ericmbouwe)
+- E-mail: ericmbouwe@gmail.com
 
 
 <hr/>
