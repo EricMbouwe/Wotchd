@@ -7,7 +7,7 @@ class ProgramsController < ApplicationController
 
   def index
     caller = params[:caller]
-    @title = caller == 'full' ? 'My programs' : 'Shuffled programs'
+    @title = caller == 'full' ? 'My programs' : 'My shuffled programs'
     @programs = current_user.programs.grouped.ordered_by_most_recent if caller == 'grouped'
     @programs = current_user.full_programs.ordered_by_most_recent if caller == 'full'
     @programs = current_user.programs.no_group.ordered_by_most_recent if caller == 'ungrouped'
@@ -30,7 +30,7 @@ class ProgramsController < ApplicationController
     caller = params[:caller]
     @program = Program.find(params[:id])
     @program.destroy
-    redirect_to programs_path(caller: 'ungrouped')
+    redirect_to programs_path(caller: 'full')
   end
 
   def program_params

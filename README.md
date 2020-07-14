@@ -1,6 +1,6 @@
 # Wotchd - a mobile application which groups your hours spent on watching entertainement programs during the day, week or the month.
 
-<img src="app/assets/images/wotchd-logo.png" alt="Wotchd" width="150" height="200">
+<img src="app/assets/images/wotchd-logo.png" alt="Wotchd" width="200" height="180">
 This is the Capstone project for the Ruby on Rails Course
 
 <hr />
@@ -82,7 +82,7 @@ Additional features are :
 
 #### Wotchd - splash screen
 
-<img src="app/assets/images/Wotchd-home.png" alt="program interface">
+<img src="app/assets/images/splash-screen.png" alt="program interface">
 <hr />
 
 #### Sign Up
@@ -92,32 +92,42 @@ Additional features are :
 
 #### Log In
 
-<img src="app/assets/images/log-in.png" alt="program interface">
+<img src="app/assets/images/login.png" alt="program interface">
 <hr />
 
 #### Wotchd - User Home
 
-<img src="app/assets/images/Wotchd-home.png" alt="program interface">
+<img src="app/assets/images/user-home.png" alt="program interface">
+<hr />
+
+#### Wotchd - New program
+
+<img src="app/assets/images/ne<-program.png" alt="program interface">
 <hr />
 
 #### Wotchd - My Programs
 
-<img src="app/assets/images/Wotchd-home.png" alt="program interface">
+<img src="app/assets/images/all-programs.png" alt="program interface">
 <hr />
 
 #### Wotchd - My shuffled Programs
 
-<img src="app/assets/images/Wotchd-home.png" alt="program interface">
+<img src="app/assets/images/shuffled-programs.png" alt="program interface">
+<hr />
+
+#### Wotchd - New Group
+
+<img src="app/assets/images/new-group.png" alt="program interface">
 <hr />
 
 #### Wotchd - All Groups
 
-<img src="app/assets/images/Wotchd-home.png" alt="program interface">
+<img src="app/assets/images/all-groups.png" alt="program interface">
 <hr />
 
 #### Wotchd - Group's Programs
 
-<img src="app/assets/images/Wotchd-home.png" alt="program interface">
+<img src="app/assets/images/group-show.png" alt="program interface">
 <hr />
 
 
@@ -197,6 +207,14 @@ You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=bloo
 
 ## Application Instructions
 
+- A guest user open the app and access the splash screen which display the logo and two buttons, login and sign up  
+- You need to sign in with only your name if you already have an account or sign up in order to navigate through the app  
+- When logged in,  
+  - You can see all your programs and your shuffled programs by clicking on the appropriate buttons  
+  - You can create a new program and add a group or not to it  
+  - You can see all existing groups by clicking on the link 'All group' in the main page  
+  - You can create a new group of programs by clicking on the green button in the bottom of the page ('All groups page')  
+  - you can edit a group by clicking on the button in the top right corner of the group's show page  
 
 <hr/>
 
@@ -251,7 +269,7 @@ You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=bloo
 <hr/>
 
 ## Testing
-In order to run test run this command first
+In order to run tests, run this command first
 
 ```
 rails generate rspec:install
