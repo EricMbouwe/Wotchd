@@ -11,6 +11,12 @@
 
   <div class=" form-new container d-flex flex-column justify-content-center">
 
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <p class="m-0"><%= alert %></p>
+      </div>
+    <% end %>
+
     <%= form_with( url: sessions_path ) do |f| %>
 
       <div class="form-group">
