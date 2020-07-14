@@ -95,7 +95,11 @@ a:hover {
 }
 
 .small {
-  font-size: 10px;
+  font-size: 12px;
+}
+
+.avatar {
+  object-fit: cover;
 }
 
 .programs-list_head, 
@@ -116,6 +120,11 @@ a:hover {
   border-radius: 2px;
   width: 94%;
   margin: 12px auto;
+}
+
+.programs-list_card:hover {
+  background-color: #e8e8ec;
+  transform: scale(1.01);
 }
 
 .add-btn {

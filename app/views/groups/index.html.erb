@@ -17,7 +17,7 @@
       <div class= "groups-list_card d-flex justify-content-center">
         <%= link_to group do %>
           <% if group.avatar.attached? %>
-            <%= image_tag group.avatar, class: "", width: 70, height: 70 %>
+            <%= image_tag group.avatar, class: "avatar", width: 70, height: 70 %>
           <% else %>
             <%= image_tag 'sample-group.jpg', alt: "default image", width: 70, height: 70, class: "" %>
           <% end %>
@@ -25,7 +25,7 @@
         <%= link_to group do %>  
           <div class="group_details ml-2">
             <p class="mt-3 mb-0"><%= group.name.capitalize %></p>
-            <small class="mt-2 d-block small"><%= group.created_at %></small>
+            <small class="mt-2 d-block small"><%= group.created_at.strftime("%A %B %d, %Y") %></small>
           </div>
         <% end %>
       </div>

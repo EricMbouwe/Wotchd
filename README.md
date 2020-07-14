@@ -1,6 +1,6 @@
 # Wotchd - a mobile application which groups your hours spent on watching entertainement programs during the day, week or the month.
 
-<img src="app/assets/images/wotchd-logo.png" alt="Wotchd" width="150" height="150">
+<img src="app/assets/images/wotchd-logo.png" alt="Wotchd" width="150" height="200">
 This is the Capstone project for the Ruby on Rails Course
 
 <hr />
@@ -166,7 +166,7 @@ We have 2 tables created by the ActiveStorage to store users and groups avtars a
 
 ## N+1 Problem
 
-  The n+1 problem is encountered in this project in one case for the association between a user and programs and groups
+  The n+1 problem encountered in this project is the association between a user, programs and groups (retrieve all the programs associated with a group or not of a user.)
 
   ```
     has_one :full_programs, -> { includes :group }, class_name: 'Program'
@@ -230,6 +230,7 @@ You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=bloo
   Run
 
 ```
+  rails db:create
   rails active_storage:install
   rails db:migrate
 

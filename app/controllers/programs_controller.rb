@@ -27,9 +27,10 @@ class ProgramsController < ApplicationController
   end
 
   def destroy
-    @program = Program.find(param[:id])
+    caller = params[:caller]
+    @program = Program.find(params[:id])
     @program.destroy
-    redirect_to programs_path
+    redirect_to programs_path(caller: 'ungrouped')
   end
 
   def program_params

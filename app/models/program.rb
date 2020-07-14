@@ -11,6 +11,6 @@ class Program < ApplicationRecord
   scope :grouped, -> { where group_id: !nil }
 
   def self.total_hours
-    self.sum(:amount)
+    sum(:amount)
   end
 end

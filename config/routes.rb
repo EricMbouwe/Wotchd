@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, except: [:index]
   resources :programs, only: [:new, :index, :create, :destroy]
-  resources :groups, only: [:new, :index, :create, :show]
+  resources :groups, except: [:destroy]
 end

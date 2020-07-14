@@ -2,7 +2,7 @@
   <div class="profile-header text-center mb-2">
     <figure class="d-flex justify-content-center">
       <% if @user.avatar.attached? %>
-        <%= image_tag @user.avatar, class: "mt-5 rounded-circle img-fluid", width: 90, height: 90 %>
+        <%= image_tag @user.avatar, class: "mt-5 rounded-circle avatar", width: 90, height: 90 %>
       <% else %>
          <%= image_tag 'sample-profile2.png', alt: "default image", width: 90, height: 90, class: "rounded-circle mt-5" %>
       <% end %>

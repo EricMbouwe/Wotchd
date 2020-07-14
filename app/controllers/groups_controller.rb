@@ -18,9 +18,11 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @user = User.find(session[:user_id])
     @group = Group.find(params[:id])
     @programs = @group.programs.all.ordered_by_most_recent
     @group_amount = @programs.total_hours
+    # @group_amount = @group.programs.where("user_id = @user.id")
   end
 
   def edit
