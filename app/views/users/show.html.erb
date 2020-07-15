@@ -10,7 +10,7 @@
     <h4 class="username"><%= @user.name.capitalize %></h4>
   </div>
 
-  <div class="profile-content align-self-center mt-4">
+  <div class="profile-content align-self-center mt-3">
     <h1 class= d-flex>
       <i class="fa fa-television d-block" aria-hidden="true"></i>
       <div class="align-self-center">
@@ -47,10 +47,14 @@
 
   </div>
 
-  <h6 class="mt-5 mx-2 align-self-center text-center">You have <%= link_to @total, details_path %> hours of streaming and watching your favorite entertainement programs.</h6>
+  <div class="d-flex align-self-center resume mt-5 align-items-center">
+    <h6 class="text-center m-0 px-3 py-2"><%= link_to 'Today', details_path(caller: 'day') %></h6>
+    <h6 class="text-center m-0 px-3 py-2"><%= link_to 'Week', details_path(caller: 'week') %></h6>
+    <h6 class="text-center m-0 px-3 py-2"><%= link_to 'Month', details_path(caller: 'month')%></h6>
+  </div>
   
   <% if flash[:notice] %>
-      <div class="alert alert-info container w-50 align-self-center text-center" role="alert">
+      <div class="alert alert-info container w-50 align-self-center text-center mt-3" role="alert">
         <p class="m-0"><%= notice %></p>
       </div>
   <% end %>

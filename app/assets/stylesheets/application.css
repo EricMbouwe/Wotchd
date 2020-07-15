@@ -65,6 +65,28 @@ a:hover {
   margin-top: 0;
 }
 
+.resume h6 {
+  border: 1px solid #fff;
+  border-left: none;
+}
+
+.resume :first-child {
+  border-left: 1px solid #fff;
+}
+
+.resume h6:hover {
+  background-color: #235a99;
+  border-color:  #235a99;
+}
+
+.resume a:hover {
+  color:#e8e8ec;
+}
+
+.resume a {
+  border: none !important;
+}
+
 /*Programs list*/
 .title {
   font-size: x-large;

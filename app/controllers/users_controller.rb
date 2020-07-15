@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :require_login, except: %i[new create]
+  before_action :set_programs, only: [:details]
+  before_action :set_caller, only: [:details]
 
   def show
     @user = User.find(params[:id])
@@ -44,21 +46,34 @@ class UsersController < ApplicationController
   end
 
   def details
-    @user = current_user
-    @day = @user.programs.daily.total_hours
-    @week = @user.programs.weekly.total_hours
-    @month = @user.programs.monthly.total_hours
-    @year = @user.programs.yearly.total_hours
+    @day = @progs.daily.total_hours.to_s
+    @week = @progs.weekly.total_hours
+    @month = @progs.monthly.total_hours
+    @year = @progs.yearly.total_hours
 
-    flash[:notice] = "watched today: #{@day} hours"
-    flash[:notice] = "watched this week: #{@week} hours"
-    flash[:notice] = "watched this month: #{@month} hours"
-    redirect_to @user
+    if @caller == 'day'
+      flash[:notice] = "Watched Today: #{@day} hours"
+      redirect_to current_user
+    elsif @caller == 'week'
+      flash[:notice] = "Watched This Week: #{@week} hours"
+      redirect_to current_user
+    else
+      flash[:notice] = "Watched This Month: #{@month} hours"
+      redirect_to current_user
+    end
   end
 
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :avatar)
+  end
+
+  def set_programs
+    @progs = current_user.programs
+  end
+
+  def set_caller
+    @caller = params[:caller]
   end
 end
