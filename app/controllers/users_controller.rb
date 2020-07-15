@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :require_login, except: [:new, :create]
+  before_action :require_login, except: %i[new create]
 
   def show
     @user = User.find(params[:id])
@@ -41,6 +41,19 @@ class UsersController < ApplicationController
     @user.destroy
     session[:user_id] = nil
     redirect_to new_session_path, notice: 'User was successfully deleted.'
+  end
+
+  def details
+    @user = current_user
+    @day = @user.programs.daily.total_hours
+    @week = @user.programs.weekly.total_hours
+    @month = @user.programs.monthly.total_hours
+    @year = @user.programs.yearly.total_hours
+
+    flash[:notice] = "watched today: #{@day} hours"
+    flash[:notice] = "watched this week: #{@week} hours"
+    flash[:notice] = "watched this month: #{@month} hours"
+    redirect_to @user
   end
 
   private

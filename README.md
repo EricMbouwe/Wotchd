@@ -1,6 +1,6 @@
 # Wotchd - a mobile application which groups your hours spent on watching entertainement programs during the day, week or the month.
 
-<img src="app/assets/images/wotchd-logo.png" alt="Wotchd" width="200" height="180">
+<img src="app/assets/images/wotchd-logo.png" alt="Wotchd" width="250" height="150">
 This is the Capstone project for the Ruby on Rails Course
 
 <hr />
@@ -102,7 +102,7 @@ Additional features are :
 
 #### Wotchd - New program
 
-<img src="app/assets/images/ne<-program.png" alt="program interface">
+<img src="app/assets/images/new-program.png" alt="program interface">
 <hr />
 
 #### Wotchd - My Programs
@@ -167,10 +167,10 @@ The project creates a database which holds 3 tables:
         - datetime: created_at  
         - datetime: update_at  
 
-We have 2 tables created by the ActiveStorage to store users and groups avtars as well.
+We have 2 tables created by the ActiveStorage to store users and groups avatars as well.
 
-  - active_storage_attachments
-  - active_storage_blobs
+    - active_storage_attachments  
+    - active_storage_blobs  
 
 <hr/>
 
@@ -179,16 +179,19 @@ We have 2 tables created by the ActiveStorage to store users and groups avtars a
   The n+1 problem encountered in this project is the association between a user, programs and groups (retrieve all the programs associated with a group or not of a user.)
 
   ```
-    has_one :full_programs, -> { includes :group }, class_name: 'Program'
+    has_many :full_programs, -> { includes :group }, class_name: 'Program'
   ```
 
 <hr/>
 
   #### Scope examples
+  Exemples for Program class
 
 ```
   scope :no_group, -> { where group_id: nil }
-  scope :order_by_name, -> { order('name DESC') }
+  scope :daily, -> { where(created_at: Time.now.beginning_of_day..Time.zone.now) }
+  scope :weekly, -> { where(created_at: Time.now.prev_day(days = 7)..Time.zone.now) }
+  scope :monthly, -> { where(created_at: Time.now.prev_month(months = 1)..Time.zone.now) }
 ```
 
 <hr/>

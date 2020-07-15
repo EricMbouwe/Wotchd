@@ -47,6 +47,12 @@
 
   </div>
 
-  <h6 class="mt-5 mx-2 align-self-center text-center">You have <%= @total %> hours of streaming and watching your favorite entertainement programs.</h6>
+  <h6 class="mt-5 mx-2 align-self-center text-center">You have <%= link_to @total, details_path %> hours of streaming and watching your favorite entertainement programs.</h6>
+  
+  <% if flash[:notice] %>
+      <div class="alert alert-info container w-50 align-self-center text-center" role="alert">
+        <p class="m-0"><%= notice %></p>
+      </div>
+  <% end %>
 
 </div>

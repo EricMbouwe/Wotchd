@@ -1,19 +1,17 @@
 class ProgramsController < ApplicationController
   before_action :require_login
+  before_action :set_caller, only: [:index]
+  before_action :set_title, only: [:index]
 
   def new
     @program = Program.new
   end
 
   def index
-    caller = params[:caller]
-    @title = caller == 'full' ? 'My programs' : 'My shuffled programs'
-    @programs = current_user.programs.grouped.ordered_by_most_recent if caller == 'grouped'
-    @programs = current_user.full_programs.ordered_by_most_recent if caller == 'full'
-    @programs = current_user.programs.no_group.ordered_by_most_recent if caller == 'ungrouped'
-
-    @programs_amount = current_user.programs.total_hours if caller == 'full'
-    @programs_amount = current_user.programs.no_group.total_hours  if caller == 'ungrouped'
+    @programs = current_user.full_programs.ordered_by_most_recent if @caller == 'full'
+    @programs = current_user.programs.no_group.ordered_by_most_recent if @caller == 'ungrouped'
+    @programs_amount = current_user.programs.total_hours if @caller == 'full'
+    @programs_amount = current_user.programs.no_group.total_hours if @caller == 'ungrouped'
   end
 
   def create
@@ -27,13 +25,22 @@ class ProgramsController < ApplicationController
   end
 
   def destroy
-    caller = params[:caller]
     @program = Program.find(params[:id])
     @program.destroy
     redirect_to programs_path(caller: 'full')
   end
 
+  private
+
   def program_params
     params.require(:program).permit(:name, :amount, :group_id)
+  end
+
+  def set_caller
+    @caller = params[:caller]
+  end
+
+  def set_title
+    @title = @caller == 'full' ? 'My programs' : 'My shuffled programs'
   end
 end
