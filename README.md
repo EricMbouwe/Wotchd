@@ -41,7 +41,7 @@ This is the Capstone project for the Ruby on Rails Course
     <a href="https://github.com/ericmbouwe/Wotchd"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="">View Demo</a>
+    <a href="https://www.loom.com/share/a71195d54afb4c09a573309165389a0d">View Demo</a>
     <a href="https://github.com/ericmbouwe/Wotchd/issues">Report Bug</a>
     <a href="https://github.com/ericmbouwe/Wotchd/issues">Request Feature</a>
   </p>
@@ -133,7 +133,7 @@ Additional features are :
 
 ## Video presentation
 
-  [View with Loom](https://www.loom.com/share/)
+  [View with Loom](https://www.loom.com/share/a71195d54afb4c09a573309165389a0d)
 
 <hr />
 
@@ -179,7 +179,7 @@ We have 2 tables created by the ActiveStorage to store users and groups avatars 
   The n+1 problem encountered in this project is the association between a user, programs and groups (retrieve all the programs associated with a group or not of a user.)
 
   ```
-    has_many :full_programs, -> { includes :group }, class_name: 'Program'
+    has_many :programs, -> { includes :group }, class_name: 'Program'
   ```
 
 <hr/>
@@ -237,6 +237,12 @@ You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=bloo
 - gem 'chromedriver-helper  
 - gem 'bcrypt'  
 - gem 'rack-cors'  
+- gem 'factory_bot_rails'  
+- gem 'rails-controller-testing'  
+- gem 'faker'
+- gem 'capybara'  
+- gem 'guard-rspec'  
+- gem 'launchy'  
 
 ## Configuration
 
@@ -280,7 +286,10 @@ rails generate rspec:install
 Then run  
 
 ```
-rspec spec/
+rspec spec/   for full tests  
+```
+```
+ bundle exec rspec spec/models/{model_name}_spec.rb   for a model test 
 ```
 Unit and integration tests have been done using RSpec an Capybara
 - Location /spec/tests/  

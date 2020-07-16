@@ -25,12 +25,16 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# Reduces boot times through caching; required in config/boot.rb
+# Reduces boot times through caching;https://github.com/karthi07/restaurant_page_js/issues/2 required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  #adds
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -48,6 +52,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  #adds
+  gem 'faker'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -7,5 +7,5 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
   has_many :programs, inverse_of: 'author', dependent: :destroy
-  has_many :full_programs, -> { includes :group }, class_name: 'Program'
+  has_many :programs, -> { includes :group }, class_name: 'Program'
 end

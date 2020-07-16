@@ -19,7 +19,7 @@
           <% if group.avatar.attached? %>
             <%= image_tag group.avatar, class: "avatar", width: 70, height: 70 %>
           <% else %>
-            <%= image_tag 'sample-group.jpg', alt: "default image", width: 70, height: 70, class: "" %>
+            <%= image_tag 'sample-group.jpg', alt: "default image", width: 70, height: 70, class: "avatar" %>
           <% end %>
         <% end %>  
         <%= link_to group do %>  

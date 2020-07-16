@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @total = @user.programs.sum(:amount)
   end
 
   def new
@@ -46,21 +45,18 @@ class UsersController < ApplicationController
   end
 
   def details
-    @day = @progs.daily.total_hours.to_s
+    @day = @progs.daily.total_hours
     @week = @progs.weekly.total_hours
     @month = @progs.monthly.total_hours
-    @year = @progs.yearly.total_hours
 
     if @caller == 'day'
       flash[:notice] = "Watched Today: #{@day} hours"
-      redirect_to current_user
     elsif @caller == 'week'
       flash[:notice] = "Watched This Week: #{@week} hours"
-      redirect_to current_user
     else
       flash[:notice] = "Watched This Month: #{@month} hours"
-      redirect_to current_user
     end
+    redirect_to current_user
   end
 
   private
