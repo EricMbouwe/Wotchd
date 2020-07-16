@@ -6,6 +6,6 @@ RSpec.describe Group, type: :model do
   end
 
   describe 'associations' do
-    it { should have_many(:programs)}
+    it { should have_many(:programs) }
   end
 end

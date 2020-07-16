@@ -1,4 +1,4 @@
-# Wotchd - a mobile application which groups your hours spent on watching entertainement programs during the day, week or the month.
+### Wotchd - a mobile application which groups your hours spent on watching entertainement programs during the day, week or the month.
 
 <img src="app/assets/images/wotchd-logo.png" alt="Wotchd" width="260" height="130">
 This is the Capstone project for the Ruby on Rails Course
@@ -285,19 +285,16 @@ rails generate rspec:install
 ```
 Then run  
 
+- For full tests 
 ```
-rspec spec/   for full tests  
+bundle exec rspec spec
 ```
+-  For a specific model
 ```
- bundle exec rspec spec/models/{model_name}_spec.rb   for a model test 
+ bundle exec rspec spec/models/{model_name}_spec.rb   
 ```
 Unit and integration tests have been done using RSpec an Capybara
-- Location /spec/tests/  
-- 4 test files  
-  - features_spec.rb  
-  - user_spec.rb  
-  - program_spec.rb  
-  - group_spec.rb  
+- Location ./spec/
 
 <hr/>
 

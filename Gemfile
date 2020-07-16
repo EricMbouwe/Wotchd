@@ -31,7 +31,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  #adds
+  # adds
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
@@ -52,7 +52,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-  #adds
+  # adds
   gem 'faker'
   gem 'guard-rspec'
   gem 'launchy'
@@ -65,11 +65,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.4.1'
 gem 'hirb'
 
-#gems for authentication
+# gems for authentication
 gem 'bcrypt', '~> 3.1', '>= 3.1.13'
 gem 'rack-cors', :require => 'rack/cors'
 
-#added gems
+# added gems
 gem 'better_errors', '~> 2.7', '>= 2.7.1'
 gem 'gravatar_image_tag', '~> 1.2'
 # gem 'simple_form', '~> 5.0', '>= 5.0.2'
