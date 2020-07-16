@@ -298,16 +298,6 @@ Unit and integration tests have been done using RSpec an Capybara
 
 <hr/>
 
-## Populate Database
-
-To populate the database with sample data run :
-
-```
-  rails db:seed
-```
-
-<hr/>
-
 ## Built With
 
 This project was built using these technologies.

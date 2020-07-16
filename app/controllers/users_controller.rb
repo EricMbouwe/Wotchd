@@ -37,13 +37,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    session[:user_id] = nil
-    redirect_to new_session_path, notice: 'User was successfully deleted.'
-  end
-
   def details
     if @caller == 'day'
       @day = @progs.daily.total_hours
