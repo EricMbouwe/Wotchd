@@ -45,15 +45,14 @@ class UsersController < ApplicationController
   end
 
   def details
-    @day = @progs.daily.total_hours
-    @week = @progs.weekly.total_hours
-    @month = @progs.monthly.total_hours
-
     if @caller == 'day'
+      @day = @progs.daily.total_hours
       flash[:notice] = "Watched Today: #{@day} hours"
     elsif @caller == 'week'
+      @week = @progs.weekly.total_hours
       flash[:notice] = "Watched This Week: #{@week} hours"
     else
+      @month = @progs.monthly.total_hours
       flash[:notice] = "Watched This Month: #{@month} hours"
     end
     redirect_to current_user

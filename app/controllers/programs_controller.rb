@@ -8,10 +8,13 @@ class ProgramsController < ApplicationController
   end
 
   def index
-    @programs = current_user.programs.ordered_by_most_recent if @caller == 'full'
-    @programs = current_user.programs.no_group.ordered_by_most_recent if @caller == 'ungrouped'
-    @programs_amount = current_user.programs.total_hours if @caller == 'full'
-    @programs_amount = current_user.programs.no_group.total_hours if @caller == 'ungrouped'
+    if @caller == 'ungrouped'
+      @programs = current_user.programs.no_group.ordered_by_most_recent
+      @programs_amount = current_user.programs.no_group.total_hours
+    else
+      @programs = current_user.programs.ordered_by_most_recent
+      @programs_amount = current_user.programs.total_hours
+    end
   end
 
   def create
