@@ -1,0 +1,62 @@
+.new-user-nav {
+  background-color: #3778c2;
+  color: #eee;
+}
+
+.profile {
+  color: #eee;
+  background-color: #3778c2;
+  min-height: 100vh;
+}
+
+.profile-content a:hover {
+  color: #434b54;
+  text-decoration: none;
+}
+
+.profile-content h1 {
+  font-size: 16px;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+.profile-content h1 a {
+  margin-left: 1rem;
+  padding: 1rem 0;
+}
+
+.profile-content hr {
+  border-color: #eee;
+  opacity: 0.5;
+  margin-left: 25%;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.profile-content i {
+  border: 1px solid #fff;
+  border-radius: 100%;
+  padding: 0.6rem;
+}
+
+.resume h6 {
+  border: 1px solid #fff;
+  border-left: none;
+}
+
+.resume :first-child {
+  border-left: 1px solid #fff;
+}
+
+.resume h6:hover {
+  background-color: #235a99;
+  border-color: #235a99;
+}
+
+.resume a:hover {
+  color: #e8e8ec;
+}
+
+.resume a {
+  border: none !important;
+}

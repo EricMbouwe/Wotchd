@@ -1,0 +1,12 @@
+.home {
+  background-color: #eee;
+  height: 100vh;
+}
+
+.log:hover {
+  background-color: #235a99;
+}
+
+.sign:hover {
+  color: #235a99;
+}
