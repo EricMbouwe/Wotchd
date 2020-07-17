@@ -21,7 +21,7 @@
     <% @group.programs.each do |program|%>
       <div class= "programs-list_card d-flex justify-content-between">
         <div class="program_details d-flex">
-          <%= set_group_icon(@group) %>
+          <%= add_group_icon(@group) %>
 
           <div class="program_details__details ml-2">
             <p class="mt-2 mb-0"><%= program.name.capitalize %></p>

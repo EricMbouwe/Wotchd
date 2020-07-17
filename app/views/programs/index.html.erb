@@ -19,7 +19,7 @@
     <% @programs.each do |program|%>
       <div class= "programs-list_card d-flex justify-content-between">
         <div class="program_details d-flex">
-          <%= set_program_item(program.group) %>
+          <%= add_program_item(program.group) %>
 
           <div class="program_details__details ml-2">
             <p class="mt-3 mb-0"><%= program.name.capitalize %></p>
