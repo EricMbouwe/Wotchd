@@ -75,3 +75,6 @@ gem 'gravatar_image_tag', '~> 1.2'
 # gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'guard', '~> 2.14'
 gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
+
+#amazon gem for production
+gem "aws-sdk-s3", require: false
