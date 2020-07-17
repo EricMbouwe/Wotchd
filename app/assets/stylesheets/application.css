@@ -14,7 +14,6 @@
  *= require_self
 */
 
-/*****************Global styles****************/
 a {
   color: inherit;
   text-decoration: none;
@@ -52,4 +51,3 @@ a:hover {
 .small {
   font-size: 12px;
 }
-/*****************Global styles****************/

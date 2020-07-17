@@ -9,6 +9,15 @@
   min-height: 100vh;
 }
 
+.resume a {
+  border: none !important;
+}
+
+.profile-content h1 a {
+  margin-left: 1rem;
+  padding: 1rem 0;
+}
+
 .profile-content a:hover {
   color: #434b54;
   text-decoration: none;
@@ -18,11 +27,6 @@
   font-size: 16px;
   padding: 0.5rem 0;
   margin: 0;
-}
-
-.profile-content h1 a {
-  margin-left: 1rem;
-  padding: 1rem 0;
 }
 
 .profile-content hr {
@@ -55,8 +59,4 @@
 
 .resume a:hover {
   color: #e8e8ec;
-}
-
-.resume a {
-  border: none !important;
 }

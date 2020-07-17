@@ -20,6 +20,11 @@
   color: #eee;
 }
 
+.add-btn a {
+  border-radius: 2px;
+  font-size: 17px;
+}
+
 .groups-list_card a:hover {
   color: #434b54;
   text-decoration: none;
@@ -53,9 +58,4 @@
   bottom: 0;
   left: 0;
   right: 0;
-}
-
-.add-btn a {
-  border-radius: 2px;
-  font-size: 17px;
 }
