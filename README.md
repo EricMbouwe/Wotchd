@@ -1,4 +1,4 @@
-### Wotchd - a mobile application which groups your hours spent on watching entertainement programs during the day, week or the month.
+### Wotchd - a mobile application which groups your hours spent on watching entertainment TV Shows during the day, week or the month.
 
 <img src="app/assets/images/wotchd-logo.png" alt="Wotchd" width="260" height="130">
 This is the Capstone project for the Ruby on Rails Course
@@ -48,7 +48,7 @@ This is the Capstone project for the Ruby on Rails Course
 </p>
   
 Wotchd is a tracker app.  
-It is an application to group and track your hours spent on watching your favorite entertenement programs  
+It is an application to group and track your hours spent on watching your favorite TV Shows 
   
 Additional features are :  
   - User can delete a program  
@@ -243,6 +243,7 @@ You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=bloo
 - gem 'capybara'  
 - gem 'guard-rspec'  
 - gem 'launchy'  
+- gem 'aws-sdk-s3'
 
 ## Configuration
 
@@ -308,6 +309,8 @@ This project was built using these technologies.
 - capybara
 - ActiveStorage
 - Heroku
+- Bootstrap 4
+- AWS
 
 <hr/>
 
@@ -354,5 +357,4 @@ This project was built using these technologies.
 [stars-url]: https://github.com/ericmbouwe/Wotchd/stargazers
 [issues-shield]: https://img.shields.io/github/issues/ericmbouwe/Wotchd.svg?style=flat-square
 [issues-url]: https://github.com/ericmbouwe/Wotchd/issues
-
 

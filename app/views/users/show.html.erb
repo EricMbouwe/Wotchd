@@ -1,11 +1,7 @@
 <div class="profile d-flex flex-column">
   <div class="profile-header text-center mb-2">
     <figure class="d-flex justify-content-center">
-      <% if @user.avatar.attached? %>
-        <%= image_tag @user.avatar, class: "mt-5 rounded-circle avatar", width: 90, height: 90 %>
-      <% else %>
-         <%= image_tag 'sample-profile2.png', alt: "default image", width: 90, height: 90, class: "rounded-circle mt-5" %>
-      <% end %>
+      <%= set_user_avatar(@user) %>
     </figure>
     <h4 class="username"><%= @user.name.capitalize %></h4>
   </div>
@@ -14,7 +10,7 @@
     <h1 class= d-flex>
       <i class="fa fa-television d-block" aria-hidden="true"></i>
       <div class="align-self-center">
-        <%= link_to 'All my programs', programs_path(caller: 'full') %>
+        <%= link_to 'All my TV Shows', programs_path(caller: 'full') %>
       </div>
     </h1>
 
@@ -23,7 +19,7 @@
     <h1 class= d-flex>
       <i class="fa fa-random d-block" aria-hidden="true"></i>
       <div class="align-self-center">
-        <%= link_to 'All my shuffled programs', programs_path(caller: 'ungrouped') %>
+        <%= link_to 'All my Shuffled TV Shows', programs_path(caller: 'ungrouped') %>
       </div>
     </h1>
 
@@ -32,7 +28,7 @@
     <h1 class= d-flex>
       <i class="fa fa-object-group d-block" aria-hidden="true"></i>
       <div class="align-self-center">
-        <%= link_to 'All groups', groups_path %>
+        <%= link_to 'All Groups', groups_path %>
       <div>
     </h1>
 

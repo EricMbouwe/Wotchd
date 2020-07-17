@@ -44,6 +44,6 @@ class ProgramsController < ApplicationController
   end
 
   def set_title
-    @title = @caller == 'full' ? 'My programs' : 'My shuffled programs'
+    @title = @caller == 'full' ? 'My TV Shows' : 'My Shuffled TV Shows'
   end
 end

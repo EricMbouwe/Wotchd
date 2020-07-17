@@ -16,7 +16,7 @@ feature 'features', type: :feature do
     end
 
     scenario 'redirects to user profile page after signup' do
-      expect(page).to have_content 'All my programs'
+      expect(page).to have_content 'All Groups'
     end
 
     scenario 'shows username on the homepage after signup' do
