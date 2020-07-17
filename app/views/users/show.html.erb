@@ -1,56 +1,58 @@
 <div class="profile d-flex flex-column">
-  <div class="profile-header text-center mb-2">
+  <div class="profile-header text-center align-self-center mb-2">
     <figure class="d-flex justify-content-center">
       <%= add_user_avatar(@user) %>
     </figure>
     <h4 class="username"><%= @user.name.capitalize %></h4>
   </div>
 
-  <div class="profile-content align-self-center mt-3">
-    <h1 class= d-flex>
-      <i class="fa fa-television d-block" aria-hidden="true"></i>
-      <div class="align-self-center">
-        <%= link_to 'All my TV Shows', programs_path(caller: 'full') %>
-      </div>
-    </h1>
+  <div class="d-flex mt-5 align-self-end align-self-md-center">
+    <div class="profile-content">
+      <h1 class= "d-flex">
+        <i class="fa fa-television d-block" aria-hidden="true"></i>
+        <div class="align-self-center">
+          <%= link_to 'All my TV Shows', programs_path(caller: 'full') %>
+        </div>
+      </h1>
 
-    <hr>
+      <hr>
 
-    <h1 class= d-flex>
-      <i class="fa fa-random d-block" aria-hidden="true"></i>
-      <div class="align-self-center">
-        <%= link_to 'All my Shuffled TV Shows', programs_path(caller: 'ungrouped') %>
-      </div>
-    </h1>
+      <h1 class= "d-flex">
+        <i class="fa fa-random d-block" aria-hidden="true"></i>
+        <div class="align-self-center">
+          <%= link_to 'All my Shuffled TV Shows', programs_path(caller: 'ungrouped') %>
+        </div>
+      </h1>
 
-    <hr>
+      <hr>
 
-    <h1 class= d-flex>
-      <i class="fa fa-object-group d-block" aria-hidden="true"></i>
-      <div class="align-self-center">
-        <%= link_to 'All Groups', groups_path %>
-      <div>
-    </h1>
+      <h1 class= "d-flex">
+        <i class="fa fa-object-group d-block" aria-hidden="true"></i>
+        <div class="align-self-center">
+          <%= link_to 'All Groups', groups_path %>
+        <div>
+      </h1>
 
-    <hr>
+      <hr>
 
-    <h1 class= d-flex>
-      <i class="fa fa-sign-out d-block" aria-hidden="true"></i>
-      <div class="align-self-center">
-        <%= link_to 'Log out', session_path(0), method: :delete %>
-      <div>
-    </h1>
+      <h1 class= "d-flex">
+        <i class="fa fa-sign-out d-block" aria-hidden="true"></i>
+        <div class="align-self-center">
+          <%= link_to 'Log out', session_path(0), method: :delete %>
+        <div>
+      </h1>
 
-  </div>
+    </div>
 
-  <div class="d-flex align-self-center resume mt-5 align-items-center">
-    <h6 class="text-center m-0 px-3 py-2"><%= link_to 'Today', details_path(caller: 'day') %></h6>
-    <h6 class="text-center m-0 px-3 py-2"><%= link_to 'Week', details_path(caller: 'week') %></h6>
-    <h6 class="text-center m-0 px-3 py-2"><%= link_to 'Month', details_path(caller: 'month')%></h6>
+    <div class="resume d-flex flex-column justify-content-center">
+      <h6 class="text-center my-0 p-2"><%= link_to 'Today', details_path(caller: 'day') %></h6>
+      <h6 class="text-center my-2 p-2"><%= link_to 'Week', details_path(caller: 'week') %></h6>
+      <h6 class="text-center my-0 p-2"><%= link_to 'Month', details_path(caller: 'month')%></h6>
+    </div>
   </div>
   
   <% if flash[:notice] %>
-      <div class="alert alert-info container w-50 align-self-center text-center mt-3" role="alert">
+      <div class="alert alert-info container w-50 align-self-center text-center mt-5" role="alert">
         <p class="m-0"><%= notice %></p>
       </div>
   <% end %>

@@ -218,7 +218,7 @@ You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=bloo
   - You can see all existing groups by clicking on the link 'All group' in the main page  
   - You can create a new group of programs by clicking on the green button in the bottom of the page ('All groups page')  
   - you can edit a group by clicking on the button in the top right corner of the group's show page  
-- Click in the small navbar in the user profile page to have a resume of your hours watched for the current day, the week (the last 7 days), and the month (the last 30 days)  
+- Click in the small sidebar in the user profile page to have a resume of your hours watched for the current day, the week (the last 7 days), and the month (the last 30 days)  
 <hr/>
 
 ## System Requierments
@@ -244,6 +244,7 @@ You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=bloo
 - gem 'guard-rspec'  
 - gem 'launchy'  
 - gem 'aws-sdk-s3'
+- gem 'coderay'
 
 ## Configuration
 
