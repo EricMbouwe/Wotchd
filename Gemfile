@@ -79,3 +79,7 @@ gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 
 # amazon gem for production
 gem 'aws-sdk-s3', require: false
+
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end
