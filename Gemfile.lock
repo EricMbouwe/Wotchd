@@ -312,6 +312,7 @@ DEPENDENCIES
   bootstrap (~> 4.4.1)
   byebug
   capybara (>= 2.15)
+  coderay
   factory_bot_rails
   faker
   gravatar_image_tag (~> 1.2)
