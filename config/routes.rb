@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'static#home'
+  root 'static#home'
+  resources :static
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, except: [:index]
   get :details, to: 'users#details'
