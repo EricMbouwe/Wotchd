@@ -41,7 +41,7 @@ This is the Capstone project for the Ruby on Rails Course
     <a href="https://github.com/ericmbouwe/Wotchd"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://www.loom.com/share/a71195d54afb4c09a573309165389a0d">View Demo</a>
+    <a href="https://wotchd.herokuapp.com/">View Demo</a>
     <a href="https://github.com/ericmbouwe/Wotchd/issues">Report Bug</a>
     <a href="https://github.com/ericmbouwe/Wotchd/issues">Request Feature</a>
   </p>
@@ -206,7 +206,7 @@ We have 2 tables created by the ActiveStorage to store users and groups avatars 
 <!-- ABOUT THE PROJECT -->
 ## Live version
 
-You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=blooming-meadow-82208)](https://Wotchd.herokuapp.com)
+You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=blooming-meadow-82208)](https://wotchd.herokuapp.com/)
 
 ## Application Instructions
 
