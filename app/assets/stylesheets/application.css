@@ -51,3 +51,8 @@ a:hover {
 .small {
   font-size: 12px;
 }
+
+.upload-label {
+  color: #000;
+  opacity: 0.5;
+}
