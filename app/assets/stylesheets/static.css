@@ -3,6 +3,10 @@
   height: 100vh;
 }
 
+.logo {
+  margin-top: 30vh;
+}
+
 .log:hover {
   background-color: #235a99;
 }

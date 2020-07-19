@@ -1,5 +1,5 @@
 <div class="profile d-flex flex-column">
-  <div class="profile-header text-center align-self-center mb-2">
+  <div class="profile-header text-center align-self-center mb-4">
     <figure class="d-flex justify-content-center">
       <%= add_user_avatar(@user) %>
     </figure>
@@ -44,7 +44,7 @@
 
     </div>
 
-    <div class="resume d-flex flex-column justify-content-center">
+    <div class="resume d-flex flex-column justify-content-center p-2">
       <h6 class="text-center my-0 p-2"><%= link_to 'Today', details_path(caller: 'day') %></h6>
       <h6 class="text-center my-2 p-2"><%= link_to 'Week', details_path(caller: 'week') %></h6>
       <h6 class="text-center my-0 p-2"><%= link_to 'Month', details_path(caller: 'month')%></h6>
