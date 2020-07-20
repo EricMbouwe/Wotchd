@@ -1,7 +1,7 @@
 module ApplicationHelper
   def add_user_avatar(obj)
     if obj.avatar.attached?
-      image_tag obj.avatar, class: 'mt-5 rounded-circle avatar', width: 100, height: 100
+      image_tag obj.avatar, class: 'mt-5 rounded-circle avatar', width: 120, height: 120
     else
       image_tag 'sample-profile2.png', alt: 'default image', width: 100, height: 100, class: 'rounded-circle mt-5'
     end

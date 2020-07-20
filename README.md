@@ -206,7 +206,7 @@ We have 2 tables created by the ActiveStorage to store users and groups avatars 
 <!-- ABOUT THE PROJECT -->
 ## Live version
 
-You can see it working [![Heroku](https://pyheroku-badge.herokuapp.com/?app=blooming-meadow-82208)](https://wotchd.herokuapp.com/)
+You can see it working on [[Heroku]](https://wotchd.herokuapp.com/)
 
 ## Application Instructions
 

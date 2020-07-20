@@ -10,17 +10,12 @@
 }
 
 #user_avatar {
-  width: 20%;
-  padding: 15px;
-  border-radius: 100%;
-  background-image: url(sample-profile.png);
+  color: #000;
+  opacity: 0.5;
 }
 
-@media screen and (min-width: 600px) {
-  #user_avatar {
-    width: 6%;
-    padding: 15px;
-  }
+#user_avatar:hover {
+  opacity: 0.8;
 }
 
 .resume a {
