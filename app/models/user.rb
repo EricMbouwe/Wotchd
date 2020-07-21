@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :programs, -> { includes :group }, class_name: 'Program'
 
   def acceptable_avatar
-    return errors.add(:avatar, 'is too big') unless avatar.byte_size <= 1.megabyte
+    return errors.add(:avatar, 'is too big') unless avatar.byte_size <= 1.5.megabyte
 
     acceptable_types = ['image/jpeg', 'image/png']
     return errors.add(:avatar, 'must be a JPEG or PNG') unless acceptable_types.include?(avatar.content_type)
