@@ -1,0 +1,61 @@
+.new-group-nav,
+.groups-list_head,
+.group__programs-list_nav {
+  background-color: #3778c2;
+  color: #eee;
+}
+
+.title {
+  font-size: 17px;
+}
+
+.avatar {
+  object-fit: cover;
+}
+
+.groups-list_card {
+  padding: 0.5rem;
+  width: 94%;
+  margin: 12px auto;
+  color: #eee;
+}
+
+.add-btn a {
+  border-radius: 2px;
+  font-size: 17px;
+}
+
+.groups-list_card a:hover {
+  color: #434b54;
+  text-decoration: none;
+}
+
+.group__programs-list {
+  min-height: 100vh;
+}
+
+.group__programs-list_content {
+  color: #434b54;
+}
+
+.group__programs-list_card {
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 2px;
+  width: 94%;
+  margin: 12px auto;
+}
+
+.group__programs-list_card:hover {
+  background-color: #e8e8ec;
+  transform: scale(1.01);
+}
+
+.add-btn {
+  background-color: #5fb523;
+  padding: 12px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

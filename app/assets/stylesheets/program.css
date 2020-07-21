@@ -1,0 +1,48 @@
+.new-program-nav {
+  background-color: #3778c2;
+  color: #eee;
+}
+
+.programs-list_head {
+  background-color: #3778c2;
+  color: #eee;
+}
+
+.title {
+  font-size: 17px;
+}
+
+.avatar {
+  object-fit: cover;
+}
+
+.programs-list_content {
+  color: #434b54;
+}
+
+.programs-list_card {
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 2px;
+  width: 94%;
+  margin: 12px auto;
+}
+
+.programs-list_card:hover {
+  background-color: #e8e8ec;
+  transform: scale(1.01);
+}
+
+.add-btn {
+  background-color: #5fb523;
+  padding: 12px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.add-btn a {
+  border-radius: 2px;
+  font-size: 17px;
+}

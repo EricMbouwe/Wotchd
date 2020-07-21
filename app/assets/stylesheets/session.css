@@ -1,0 +1,20 @@
+.session-nav {
+  background-color: #3778c2;
+  color: #eee;
+}
+
+.form-new {
+  background-color: #fff;
+  margin-top: 1rem;
+  padding: 1rem;
+  color: #e8e8ec;
+  border-top: 1px solid #e8e8ec;
+  border-bottom: 1px solid #e8e8ec;
+}
+
+.form-new input {
+  outline: none;
+  border: none;
+  padding: 5px 0;
+  border-bottom: 1px solid #e8e8ec;
+}
