@@ -1,0 +1,31 @@
+<div class="new-session bg-eee vh-100">
+  <div class="session-nav">
+    <div class="menu d-flex justify-content-between align-items-center p-2">
+        <%= link_to root_path do %>
+          <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+        <% end %>
+        <h4 class="title m-0">Login</h4>
+        <span><%= link_to 'Cancel', root_path %></span>
+      </div>
+  </div>
+
+  <div class=" form-new container d-flex flex-column justify-content-center">
+
+    <% if flash[:alert] %>
+      <div class="alert alert-danger">
+        <p class="m-0"><%= alert %></p>
+      </div>
+    <% end %>
+
+    <%= form_with( url: sessions_path ) do |f| %>
+
+      <div class="form-group">
+        <%= f.text_field :name, placeholder: 'Name', autofocus: true, class: "w-100" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Login", class: "log d-block border rad p-2 text-center text-white bg-blue w-100" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<% if @user.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @user.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @user do |f| %>
+  <div class="form-group">
+    <%= f.label 'Upload picture (Optional max-size: 1.5Mb)', class: "upload-label" %>
+    <%= f.file_field :avatar, direct_upload: true, class: "form-control-file" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :name, placeholder: 'Name', autofocus: true, class: "w-100" %>
+  </div>
+  <div class="form-group">
+    <%= f.email_field :email, placeholder: 'Email', class: "w-100" %>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <%= f.password_field :password, placeholder: 'Password', class: "w-100" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit @button, class: "log d-block border rad p-2 text-center text-white bg-blue w-100"  %>
+  </div>
+<% end %>
+
